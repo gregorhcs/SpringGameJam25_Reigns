@@ -2,6 +2,10 @@ pipeline {
 	agent {
 		label 'unity && linux'
 	}
+	options {
+		disableConcurrentBuilds()
+		disableResume()
+	}
 	stages {
 		stage('Index workspace') {
 			steps {
