@@ -1,5 +1,7 @@
 {
+  "resolutionStrategy": "highestMinor",
   "dependencies": {
+    "com.domybest.mybox": "1.8.0",
     "com.unity.collab-proxy": "2.8.2",
     "com.unity.feature.2d": "2.0.1",
     "com.unity.ide.rider": "3.0.36",
@@ -43,5 +45,21 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "OpenUPM",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.alelievr",
+        "com.domybest.mybox",
+        "com.inkle.ink-unity-integration",
+        "com.oss.leantween",
+        "com.rlabrecque.steamworks.net",
+        "com.unity.uiextensions",
+        "net.tnrd.nsubstitute",
+        "nl.jeffreylanters.tweens"
+      ]
+    }
+  ]
 }
