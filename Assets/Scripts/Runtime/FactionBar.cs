@@ -1,4 +1,3 @@
-using MyBox;
 using Slothsoft.UnityExtensions;
 using UnityEngine;
 
@@ -21,9 +20,9 @@ namespace Runtime {
         float smoothTime = 1;
 
         [Header("Runtime")]
-        [SerializeField, ReadOnly]
+        [SerializeField]
         float height;
-        [SerializeField, ReadOnly]
+        [SerializeField]
         float speed;
 
         void UpdateHeight(float deltaTime) {
