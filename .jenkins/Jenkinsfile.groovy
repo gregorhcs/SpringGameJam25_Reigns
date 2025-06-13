@@ -1,6 +1,6 @@
 pipeline {
 	agent {
-		label 'unity'
+		label 'unity && linux'
 	}
 	stages {
 		stage('Index workspace') {
