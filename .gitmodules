@@ -1,0 +1,12 @@
+[submodule "Packages/net.slothsoft.test-runner"]
+	path = Packages/net.slothsoft.test-runner
+	url = https://github.com/Faulo/net.slothsoft.test-runner
+	branch = main
+[submodule "Packages/net.slothsoft.aseprite"]
+	path = Packages/net.slothsoft.aseprite
+	url = https://github.com/Faulo/net.slothsoft.aseprite
+	branch = main
+[submodule "Packages/net.slothsoft.unity-extensions"]
+	path = Packages/net.slothsoft.unity-extensions
+	url = https://github.com/Faulo/net.slothsoft.unity-extensions
+	branch = main
