@@ -13,7 +13,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 873d4f28635220040a6661218521322e, type: 3}
-  useMasterPalette: 0
+  useMasterPalette: 1
   importVariants:
     processors:
     - rid: 4836032883363676160
