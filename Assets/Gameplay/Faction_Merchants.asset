@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52c9d74635164c49bb89493d0f087a6, type: 3}
   m_Name: Faction_Merchants
   m_EditorClassIdentifier: 
+  id: Merchants
   startingLoyalty: 50
   currentLoyalty: 50
   colorAsset: {fileID: -4212002499500034665, guid: ece2bccffaec64f49a8e99e7323d0ba5, type: 3}
+  animatorController: {fileID: 6227694144673515183, guid: dd7c14515b7743644b0f17f213b2329d, type: 3}

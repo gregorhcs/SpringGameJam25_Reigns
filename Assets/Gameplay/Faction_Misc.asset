@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a52c9d74635164c49bb89493d0f087a6, type: 3}
-  m_Name: Faction_Nobles
+  m_Name: Faction_Misc
   m_EditorClassIdentifier: 
-  id: Nobles
+  id: Misc
   startingLoyalty: 50
   currentLoyalty: 50
-  colorAsset: {fileID: -7876283649248279074, guid: ece2bccffaec64f49a8e99e7323d0ba5, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
   animatorController: {fileID: 6227694144673515183, guid: dd7c14515b7743644b0f17f213b2329d, type: 3}
