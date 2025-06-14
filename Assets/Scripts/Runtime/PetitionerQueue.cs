@@ -13,6 +13,9 @@ namespace Assets.Scripts.Runtime {
         int numberOfSlotsToGenerate = 10;
 
         [SerializeField]
+        int numberOfPetitionersToSpawn = 10;
+
+        [SerializeField]
         float minSecToWaitBetweenSpawns = 0.1f;
 
         [SerializeField]
@@ -54,9 +57,11 @@ namespace Assets.Scripts.Runtime {
         }
 
         IEnumerator SpawnInitialPetitioners() {
-            for (int i = 0; i < numberOfSlotsToGenerate; i++) {
+            SpawnPetitioner(slots.SkipLast(2).Last().transform);
+            for (int i = 0; i < numberOfPetitionersToSpawn - 1; i++) {
                 SpawnPetitioner();
-                yield return new WaitForSeconds(Random.Range(minSecToWaitBetweenSpawns, maxSecToWaitBetweenSpawns));
+                float delay = Random.Range(minSecToWaitBetweenSpawns, maxSecToWaitBetweenSpawns);
+                yield return new WaitForSeconds(delay);
             }
             yield return null;
         }
@@ -91,12 +96,10 @@ namespace Assets.Scripts.Runtime {
         [SerializeField]
         ConcernsLibraryAsset concernsLibrary = default;
 
-        Petitioner SpawnPetitioner() {
+        Petitioner SpawnPetitioner(Transform overrideTransform = default) {
             var petitioner = Instantiate(petitionerPrefab);
-
             var concern = concernsLibrary.concerns[Random.Range(0, concernsLibrary.concerns.Count)];
-            petitioner.SetUp(petitionerSpawnPoint.transform, petitionerLeavePoint.transform, concern, this);
-
+            petitioner.SetUp(overrideTransform ? overrideTransform : petitionerSpawnPoint.transform, petitionerLeavePoint.transform, concern, this);
             return petitioner;
         }
     }
