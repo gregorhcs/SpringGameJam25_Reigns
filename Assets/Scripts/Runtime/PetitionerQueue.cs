@@ -22,6 +22,9 @@ namespace Assets.Scripts.Runtime {
         GameObject petitionerSpawnPoint = default;
 
         [SerializeField]
+        GameObject petitionerLeavePoint = default;
+
+        [SerializeField]
         GameObject queueStart = default;
 
         [SerializeField]
@@ -42,7 +45,7 @@ namespace Assets.Scripts.Runtime {
         public bool TryGetPetitionerInFrontOfThrone(out Petitioner outPetitioner) {
             outPetitioner = null;
             foreach (var slot in slots) {
-                if (slot.isThroneSlot) {
+                if (slot.isThroneSlot && slot.petitioner != null && slot.petitioner.isPhysicallyAtSlot) {
                     outPetitioner = slot.petitioner;
                     return slot.petitioner;
                 }
@@ -89,7 +92,7 @@ namespace Assets.Scripts.Runtime {
             var petitioner = Instantiate(petitionerPrefab);
 
             var concern = concernsLibrary.concerns[Random.Range(0, concernsLibrary.concerns.Count)];
-            petitioner.SetUp(petitionerSpawnPoint.transform, concern, this);
+            petitioner.SetUp(petitionerSpawnPoint.transform, petitionerLeavePoint.transform, concern, this);
 
             return petitioner;
         }

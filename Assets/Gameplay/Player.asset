@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72b33cafcbd2a848975a912761a84a5, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
+  shortInteractionDuration: 0.2
+  longInteractionDuration: 15
   isInteracting: 0
-  interactionTime: 0.5
+  interactionTime: 60.0597
+  longInteractionDone: 0
