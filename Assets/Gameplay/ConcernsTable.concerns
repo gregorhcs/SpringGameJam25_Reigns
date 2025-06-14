@@ -20,14 +20,14 @@ Merchants	Allowing paying money to get noble status.	-10	1	10	1	0	1	10	1
 Merchants	Force wheat to be sold by merchants only!	-5	1	-20	1	-10	1	15	1
 Merchants	Force priests to accept merchant trade offers!	0	1	0	1	-30	1	20	1
 Merchants	Allow working for the higher class without payment!	20	1	-30	1	0	1	5	1.5
-Misc	Allow our most trusted lord to replace you for a bit. Why do you not rest for a few moons? We will handle the country for you.	0	1.3	-10	1	-10	1	-10	1
-Misc	Please my queen, free us from the heavy burden of the taxes. Families all over the country suffer from them.	-20	1	0	1.3	0	1	-20	1
-Misc	It is long overdue for the church to be the final instance of morality. Grant us that right, and we will not disappoint you.	-10	1	0	1	0	1.3	0	1
-Misc	Dearest Queen, our families have known each other for the longest time. Why don't we marry, bringing us closer than ever?	-20	1	0	1	0	1	20	1.3
-Misc	Execute these murderers we tracked down in the countryside!	15	1.2	-20	0.8	25	1	0	1
-Misc	Tear down this old shrine, make place for new fields!	0	1	25	1	-20	1	0	1
-Misc	Allow the upper class to claim dogs from their servants without payment.	15	1	-10	0.8	0	1	15	1
-Misc	Restrict access to castle food stocks in dire times.	0	1.5	0	0.8	-10	1	0	0.8
+Nobles	Allow our most trusted lord to replace you for a bit. Why do you not rest for a few moons? We will handle the country for you.	0	1.3	-10	1	-10	1	-10	1
+Peasants	Please my King, free us from the heavy burden of the taxes. Families all over the country suffer from them.	-20	1	0	1.3	0	1	-20	1
+Clerics	It is long overdue for the church to be the final instance of morality. Grant us that right, and we will not disappoint you.	-10	1	0	1	0	1.3	0	1
+Merchants	Dearest King, our families have known each other for the longest time. Why don't we marry, bringing us closer than ever?	-20	1	0	1	0	1	20	1.3
+Nobles	Execute these murderers we tracked down in the countryside!	15	1.2	-20	0.8	25	1	0	1
+Peasants	Tear down this old shrine, make place for new fields!	0	1	25	1	-20	1	0	1
+Merchants	Allow the upper class to claim dogs from their servants without payment.	15	1	-10	0.8	0	1	15	1
+Nobles	Restrict access to castle food stocks in dire times.	0	1.5	0	0.8	-10	1	0	0.8
 Misc	Establish the merchant guild as administrators of clerical treasures.	0	1	0	1	0	0.3	25	1.4
 Misc	Suppress the rebellious folks in the coastal trade towns!	20	1.5	-10	1	0	1	-20	1
 Misc	Force the builders guid to build a church in our village!	0	1	10	1	10	1	-20	1
@@ -39,4 +39,4 @@ Clerics	Declare the concept of possession void! Redistribute gods gifts to the G
 Nobles	Declare war on Enyland!	20	1.4	10	1	-5	1	-10	1
 Misc	Organize a big tournament!	10	1	10	1	-10	1	5	1
 Misc	Release our husbands from the prisons!	-15	1	15	1	-15	1	15	1
-Misc	The queen should not waste so much money!	-5	1	-5	1	-10	1	-15	1
+Misc	The King should not waste so much money!	-5	1	-5	1	-10	1	-15	1
