@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts.Runtime {
@@ -23,6 +24,7 @@ namespace Assets.Scripts.Runtime {
                 slot.transform.position = Vector3.Lerp(queueStart.transform.position, queueEnd.transform.position, slotIndex / (numberOfSlotsToGenerate-1f));
                 slots.Add(slot);
             }
+            slots.Last().isThroneSlot = true;
         }
 
         // @TODO ghs: maybe move the code below into separate class?
