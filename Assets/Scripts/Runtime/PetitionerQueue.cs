@@ -39,6 +39,8 @@ namespace Assets.Scripts.Runtime {
         [SerializeField]
         ConcernsLibraryAsset concernsLibrary = default;
 
+        public float spaceBetweenSlots => (queueStart.transform.position.x - queueEnd.transform.position.x) / (numberOfSlotsToGenerate - 1);
+
         List<PetitionerSlot> slots = new();
 
         protected void Start() {
