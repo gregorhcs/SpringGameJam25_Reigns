@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingLoyalty: 50
   currentLoyalty: 50
-  color: {r: 0.56098515, g: 0.20143577, b: 0.61006284, a: 1}
+  colorAsset: {fileID: -7876283649248279074, guid: ece2bccffaec64f49a8e99e7323d0ba5, type: 3}

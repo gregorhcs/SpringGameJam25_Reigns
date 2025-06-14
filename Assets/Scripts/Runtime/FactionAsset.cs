@@ -1,3 +1,5 @@
+using Slothsoft.Aseprite;
+using Slothsoft.UnityExtensions;
 using UnityEngine;
 
 namespace Runtime {
@@ -7,8 +9,10 @@ namespace Runtime {
         internal float startingLoyalty = 50;
         [SerializeField, Range(0, 100)]
         internal float currentLoyalty = 50;
-        [SerializeField]
-        internal Color color = Color.white;
+        [SerializeField, Expandable]
+        ColorAsset colorAsset;
+
+        internal Color color => colorAsset;
 
         internal void SetUp() {
             currentLoyalty = startingLoyalty;
