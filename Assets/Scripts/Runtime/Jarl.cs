@@ -17,11 +17,11 @@ namespace Assets.Scripts.Runtime {
         [SerializeField]
         float royalSupportPerThrow = 0.1f;
 
-        [SerializeField]
-        float maxSendAwayTime = 15f;
+        //[SerializeField]
+        //float maxSendAwayTime = 15f;
 
-        [SerializeField]
-        float quitTime = 30f;
+        //[SerializeField]
+        //float quitTime = 30f;
 
         [SerializeField]
         float throwAnimActiveTime = 0.3f;
