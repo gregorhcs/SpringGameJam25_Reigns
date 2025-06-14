@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2025779397216721568}
   - component: {fileID: 7884853497938802030}
   - component: {fileID: 9103876671980474281}
+  - component: {fileID: 3576329462793222087}
   m_Layer: 0
   m_Name: P_Jarl
   m_TagString: Untagged
@@ -111,6 +112,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3576329462793222087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094316418402754648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284f7d1b51045624dbbdd413584c0a0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  animator: {fileID: 9103876671980474281}
+  player: {fileID: 0}
+  queue: {fileID: 0}
+  royalSupportPerThrow: 0.1
+  royalSupportPerRejectSecond: -0.1
+  maxRejectTime: 15
+  quitTime: 30
 --- !u!1001 &4664481963265131741
 PrefabInstance:
   m_ObjectHideFlags: 0

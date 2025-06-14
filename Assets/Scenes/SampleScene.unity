@@ -500,6 +500,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction: {fileID: 1781555164194001046, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   player: {fileID: 11400000, guid: d5aaa2475aa77654e9668125c10758e7, type: 2}
+--- !u!114 &947746074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 855973594203264667, guid: c3dcfdd9a26d74c4993cfd19fdeb8ca9, type: 3}
+  m_PrefabInstance: {fileID: 1901016271162866035}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3faf5802bdb83af43817172b2fa9d681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1055555664
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +808,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_Jarl
       objectReference: {fileID: 0}
+    - target: {fileID: 3576329462793222087, guid: 7f9d27126e3012d43b18564691946db9, type: 3}
+      propertyPath: queue
+      value: 
+      objectReference: {fileID: 947746074}
+    - target: {fileID: 3576329462793222087, guid: 7f9d27126e3012d43b18564691946db9, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 11400000, guid: d5aaa2475aa77654e9668125c10758e7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

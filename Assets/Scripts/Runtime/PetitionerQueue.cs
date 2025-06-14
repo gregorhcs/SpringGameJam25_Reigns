@@ -39,6 +39,17 @@ namespace Assets.Scripts.Runtime {
             StartCoroutine(SpawnInitialPetitioners());
         }
 
+        public bool TryGetPetitionerInFrontOfThrone(out Petitioner outPetitioner) {
+            outPetitioner = null;
+            foreach (var slot in slots) {
+                if (slot.isThroneSlot) {
+                    outPetitioner = slot.petitioner;
+                    return slot.petitioner;
+                }
+            }
+            return false;
+        }
+
         IEnumerator SpawnInitialPetitioners() {
             for (int i = 0; i < numberOfSlotsToGenerate; i++) {
                 SpawnPetitioner();
