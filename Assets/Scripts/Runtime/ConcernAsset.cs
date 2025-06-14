@@ -1,12 +1,10 @@
+using Slothsoft.UnityExtensions;
 using UnityEngine;
 
-namespace GameJam {
+namespace Runtime {
     public sealed class ConcernAsset : ScriptableObject {
         [TextArea] public string speech;
-
-        public float nobleSum, nobleMult;
-        public float peasantSum, peasantMult;
-        public float clericSum, clericMult;
-        public float merchantSum, merchantMult;
+        public SerializableKeyValuePairs<FactionAsset, float> summands = new();
+        public SerializableKeyValuePairs<FactionAsset, float> multipliers = new();
     }
 }

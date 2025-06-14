@@ -2,7 +2,8 @@
     "name": "GameJam.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:bdef143082cd007419606172a62b696c"
+        "GUID:bdef143082cd007419606172a62b696c",
+        "GUID:507d80cf36f8258488bde8c39deefd3a"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
