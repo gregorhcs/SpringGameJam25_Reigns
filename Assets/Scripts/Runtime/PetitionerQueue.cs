@@ -63,17 +63,20 @@ namespace Assets.Scripts.Runtime {
 
         public bool FindFreeSlotInFrontOf(GameObject instigator, out PetitionerSlot outSlot) {
             outSlot = null;
+            // slots is sorted from nearest to farest from petitioner spawn point
             foreach (var slot in slots) {
                 if (IsInFrontOf(instigator, slot.gameObject)) {
                     if (!slot.IsFree()) {
                         // non-free slot ahead, can't jump lines so stop search!
-                        return false;
+                        return outSlot != null;
                     }
-                    outSlot = slot;
-                    return true;
+                    else {
+                        // found a slot that is farer away and free, target that one
+                        outSlot = slot;
+                    }
                 }
             }
-            return false;
+            return outSlot != null;
         }
 
         bool IsInFrontOf(GameObject instigator, GameObject target) {
