@@ -6,6 +6,7 @@ namespace Assets.Scripts.Runtime {
         public float royalSupport = 0f;
         public ConcernAsset concern = default;
         public FactionAsset faction => concern.faction;
+        public bool isAtThrone => slot != null && slot.isThroneSlot;
 
         PetitionerQueue queue = null;
         PetitionerSlot slot = null;
