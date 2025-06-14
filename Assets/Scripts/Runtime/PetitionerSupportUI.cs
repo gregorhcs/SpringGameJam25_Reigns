@@ -9,6 +9,12 @@ namespace Assets.Scripts.Runtime {
         TMPro.TMP_Text royalFeedbackNumber = default;
 
         [SerializeField]
+        TMPro.TMP_Text colorLerpTarget = default;
+
+        [SerializeField]
+        TMPro.TMP_Text speechText = default;
+
+        [SerializeField]
         Canvas rootPanel = default;
 
         protected void Start()
@@ -20,8 +26,9 @@ namespace Assets.Scripts.Runtime {
         {
             if (petitioner.isAtThrone) {
                 rootPanel.enabled = true;
+                speechText.text = petitioner.concern.speech;
                 royalFeedbackNumber.text = petitioner.GetRoyalSupport().ToString("0");
-                royalFeedbackNumber.color = Color.Lerp(Color.red, Color.green, petitioner.GetRoyalSupport() / 100f);
+                colorLerpTarget.color = Color.Lerp(Color.red, Color.green, petitioner.GetRoyalSupport() / 100f);
             }
         }
     }
