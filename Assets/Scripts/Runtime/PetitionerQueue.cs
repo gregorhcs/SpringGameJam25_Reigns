@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Runtime;
 using UnityEngine;
 
 namespace Assets.Scripts.Runtime {
@@ -9,6 +10,9 @@ namespace Assets.Scripts.Runtime {
 
         [SerializeField]
         int numberOfSlotsToGenerate = 10;
+
+        [SerializeField]
+        GameObject petitionerSpawnPoint = default;
 
         [SerializeField]
         GameObject queueStart = default;
@@ -25,16 +29,24 @@ namespace Assets.Scripts.Runtime {
                 slots.Add(slot);
             }
             slots.Last().isThroneSlot = true;
+
+            SpawnPetitioner();
         }
 
         // @TODO ghs: maybe move the code below into separate class?
 
         [SerializeField]
-        GameObject petitionerPrefab = default;
+        Petitioner petitionerPrefab = default;
 
-        GameObject SpawnPetitioner(GameObject spawnPoint) {
+        [SerializeField]
+        ConcernsLibraryAsset concernsLibrary = default;
+
+        Petitioner SpawnPetitioner() {
             var petitioner = Instantiate(petitionerPrefab);
-            petitioner.transform.SetPositionAndRotation(spawnPoint.transform.position, spawnPoint.transform.rotation);
+
+            var concern = concernsLibrary.concerns[Random.Range(0, concernsLibrary.concerns.Count)];
+            petitioner.SetUp(petitionerSpawnPoint.transform, concern);
+
             return petitioner;
         }
     }

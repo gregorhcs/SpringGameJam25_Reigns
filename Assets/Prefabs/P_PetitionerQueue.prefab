@@ -32,6 +32,7 @@ Transform:
   m_Children:
   - {fileID: 3969506135833375227}
   - {fileID: 1661316483468926649}
+  - {fileID: 1615453788335799337}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &855973594203264667
@@ -48,9 +49,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotPrefab: {fileID: -2968188092595102496, guid: c2a3e3837622d2d4697f38ec7a087a8c, type: 3}
   numberOfSlotsToGenerate: 10
+  petitionerSpawnPoint: {fileID: 1619934449255533571}
   queueStart: {fileID: 4417885000281608096}
   queueEnd: {fileID: 6792851564806404133}
-  petitionerPrefab: {fileID: 8163960950390905664, guid: 45f3937982b07da489c9bb85db0e2f54, type: 3}
+  petitionerPrefab: {fileID: 5663602012977832459, guid: 45f3937982b07da489c9bb85db0e2f54, type: 3}
+  concernsLibrary: {fileID: -8117966405139107755, guid: a1bf0a2f8989ef24598c580aa8cd5cde, type: 3}
+--- !u!1 &1619934449255533571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1615453788335799337}
+  m_Layer: 0
+  m_Name: PetitionerSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1615453788335799337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619934449255533571}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.43, y: -2.9967566, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8720360384778220067}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4417885000281608096
 GameObject:
   m_ObjectHideFlags: 0

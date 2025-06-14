@@ -36,11 +36,10 @@ namespace Editor {
                 return;
             }
 
-            var concernTable = new GameObject {
-                name = "ConcernTable"
-            };
-            ctx.AddObjectToAsset("Root", concernTable);
-            ctx.SetMainObject(concernTable);
+            var concernLibrary = ScriptableObject.CreateInstance<ConcernsLibraryAsset>();
+            concernLibrary.name = "ConcernLibrary";
+            ctx.AddObjectToAsset("Root", concernLibrary);
+            ctx.SetMainObject(concernLibrary);
 
             Dictionary<string, int> counter = new();
 
@@ -70,6 +69,8 @@ namespace Editor {
                     counter[concern.faction.id] = 0;
                 }
                 concern.name = $"Concern_{concern.faction.id}_{counter[concern.faction.id]++}";
+
+                concernLibrary.concerns.Add(concern);
                 ctx.AddObjectToAsset(concern.name, concern);
             }
         }
@@ -81,6 +82,11 @@ namespace Editor {
 
             for (int affectedFactionIndex = 0; affectedFactionIndex < factions.Length; affectedFactionIndex++) {
                 var affectedfaction = factions[affectedFactionIndex];
+
+                if (columns.Length <= 2 + (affectedFactionIndex * 2) + 1) {
+                    break;
+                }
+
                 ok &= TryParseLoyaltyModifier(columns[2 + (affectedFactionIndex * 2) + 0], affectedfaction, rowIndex, summands);
                 ok &= TryParseLoyaltyModifier(columns[2 + (affectedFactionIndex * 2) + 1], affectedfaction, rowIndex, multipliers);
             }

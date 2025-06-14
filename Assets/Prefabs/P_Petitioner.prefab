@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4571894423896339950}
   - component: {fileID: 5663602012977832459}
   - component: {fileID: -4256775892510171508}
+  - component: {fileID: -5144078725056251342}
   m_Layer: 0
   m_Name: P_Petitioner
   m_TagString: Untagged
@@ -45,8 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b047c7ad673b6c43b36d56e01dbf8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAtThrone: 0
   royalSupport: 50
   concern: {fileID: 0}
+  animator: {fileID: -5144078725056251342}
 --- !u!212 &-4256775892510171508
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -102,3 +105,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &-5144078725056251342
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8163960950390905664}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
