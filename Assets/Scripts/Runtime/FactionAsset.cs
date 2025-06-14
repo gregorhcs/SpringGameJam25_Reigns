@@ -20,6 +20,9 @@ namespace Runtime {
 
         internal Color color => colorAsset;
 
+        [SerializeField, Expandable]
+        internal Sprite banner;
+
         [SerializeField]
         internal AnimatorController animatorController = default;
 

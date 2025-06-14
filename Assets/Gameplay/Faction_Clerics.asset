@@ -15,5 +15,6 @@ MonoBehaviour:
   id: Clerics
   startingLoyalty: 50
   currentLoyalty: 50
-  colorAsset: {fileID: 7108157152568448965, guid: ece2bccffaec64f49a8e99e7323d0ba5, type: 3}
+  colorAsset: {fileID: 7085181160603514010, guid: ece2bccffaec64f49a8e99e7323d0ba5, type: 3}
+  banner: {fileID: -5451069353435918704, guid: d5ab1b753e013c1449fd5225c51fd44f, type: 3}
   animatorController: {fileID: 6227694144673515183, guid: b932ddeba555a8b4fb5370e3c31bbca7, type: 3}
