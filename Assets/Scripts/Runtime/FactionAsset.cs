@@ -1,6 +1,5 @@
 using Slothsoft.Aseprite;
 using Slothsoft.UnityExtensions;
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Runtime {
@@ -24,7 +23,7 @@ namespace Runtime {
         internal Sprite banner;
 
         [SerializeField]
-        internal AnimatorController animatorController = default;
+        internal RuntimeAnimatorController animatorController = default;
 
         public void SetUp() {
             currentLoyalty = startingLoyalty;
