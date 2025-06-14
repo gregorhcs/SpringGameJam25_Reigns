@@ -498,6 +498,55 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a9a4e64c5c48de40928877c0e9983c9, type: 3}
+--- !u!1 &2034680894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2034680896}
+  - component: {fileID: 2034680895}
+  m_Layer: 0
+  m_Name: FactionInitializer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2034680895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034680894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88642993289b3b14182f761684dbec7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  factions:
+  - {fileID: 11400000, guid: e2b1667cfbc1785439bd36fdc2d9f963, type: 2}
+  - {fileID: 11400000, guid: 33adef3aa65f3f042ad16ef9581a67bf, type: 2}
+  - {fileID: 11400000, guid: 8317c2eb58c7e7647b38ed3a2622d6af, type: 2}
+  - {fileID: 11400000, guid: 7880d98152434394995600b1a4eadb16, type: 2}
+--- !u!4 &2034680896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034680894}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.0902684, y: 0.2230102, z: 8.773786}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2100320996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -643,3 +692,4 @@ SceneRoots:
   - {fileID: 1901016271162866035}
   - {fileID: 2100320996}
   - {fileID: 1167180288}
+  - {fileID: 2034680896}

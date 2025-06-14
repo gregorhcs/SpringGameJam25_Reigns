@@ -8,8 +8,11 @@ namespace Runtime {
         [SerializeField]
         SpriteRenderer bar;
 
+        Vector3 initialPosition = default;
+
         void Start() {
             bar.sprite = asset.banner;
+            initialPosition = bar.transform.position;
             UpdateHeight(1000);
         }
 
@@ -19,6 +22,8 @@ namespace Runtime {
 
         [SerializeField]
         float smoothTime = 1;
+        [SerializeField]
+        float minHeight = -10;
         [SerializeField]
         float maxHeight = 6;
 
@@ -31,7 +36,7 @@ namespace Runtime {
         void UpdateHeight(float deltaTime) {
             if (bar && asset) {
                 height = Mathf.SmoothDamp(height, asset.currentLoyalty, ref speed, smoothTime, float.PositiveInfinity, deltaTime);
-                bar.size = bar.size.WithY(Mathf.Lerp(0, maxHeight, height / 100));
+                bar.transform.SetPositionAndRotation(initialPosition + (Mathf.Lerp(minHeight, maxHeight, height / 100) * Vector3.up), Quaternion.identity);
             }
         }
     }
