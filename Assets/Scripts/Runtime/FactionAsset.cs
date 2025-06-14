@@ -26,7 +26,7 @@ namespace Runtime {
         [SerializeField]
         internal AnimatorController animatorController = default;
 
-        internal void SetUp() {
+        public void SetUp() {
             currentLoyalty = startingLoyalty;
         }
     }
