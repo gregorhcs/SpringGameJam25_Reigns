@@ -49,6 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotPrefab: {fileID: -2968188092595102496, guid: c2a3e3837622d2d4697f38ec7a087a8c, type: 3}
   numberOfSlotsToGenerate: 10
+  minSecToWaitBetweenSpawns: 0.02
+  maxSecToWaitBetweenSpawns: 0.3
   petitionerSpawnPoint: {fileID: 1619934449255533571}
   queueStart: {fileID: 4417885000281608096}
   queueEnd: {fileID: 6792851564806404133}
