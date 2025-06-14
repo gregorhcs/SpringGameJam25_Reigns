@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: 440aba5a8e2bc884d832dd1d2ce58a10
+importerOverride:
+  nativeImporterType: 2089858483
+  scriptedImporterType:
+    serializedVersion: 2
+    Hash: 37c6705b4df1ae1b85ab20734e5bb081
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 873d4f28635220040a6661218521322e, type: 3}
+  useMasterPalette: 1
+  importVariants:
+    processors:
+    - rid: 4836032897797062736
+  references:
+    version: 2
+    RefIds:
+    - rid: 4836032897797062736
+      type: {class: AsepriteAnimatorProcessor, ns: Slothsoft.Aseprite.Editor, asm: Slothsoft.Aseprite.Editor}
+      data:
+        key: animator
+        includeEmptyAnimations: 0
+        importAsAnimator: 1
+        importAsAnimatorOverride: 0
+        referenceController: {instanceID: 0}
+        importOverridePrefab: 0
+        pixelsPerUnit: 8
