@@ -12,10 +12,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_FactionBar_Clerics
       objectReference: {fileID: 0}
-    - target: {fileID: 5898338056096773766, guid: ba384209229ec2c44ada8134532c4599, type: 3}
-      propertyPath: asset
-      value: 
-      objectReference: {fileID: 11400000, guid: e2b1667cfbc1785439bd36fdc2d9f963, type: 2}
     - target: {fileID: 9121640114504902981, guid: ba384209229ec2c44ada8134532c4599, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
