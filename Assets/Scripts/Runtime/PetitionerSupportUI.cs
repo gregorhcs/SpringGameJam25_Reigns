@@ -31,7 +31,7 @@ namespace Assets.Scripts.Runtime {
                 colorLerpTarget.color = Color.Lerp(Color.red, Color.green, petitioner.GetRoyalSupport() / 100f);
             }
             if (petitioner.isLeaving) {
-                speechText.text = "";
+                rootPanel.enabled = false;
             }
         }
     }
