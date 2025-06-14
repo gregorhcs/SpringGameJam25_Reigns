@@ -20,8 +20,8 @@ namespace Assets.Scripts.Runtime {
         {
             if (petitioner.isAtThrone) {
                 rootPanel.enabled = true;
-                royalFeedbackNumber.text = petitioner.royalSupport.ToString("0");
-                royalFeedbackNumber.color = Color.Lerp(Color.red, Color.green, petitioner.royalSupport / 100f);
+                royalFeedbackNumber.text = petitioner.GetRoyalSupport().ToString("0");
+                royalFeedbackNumber.color = Color.Lerp(Color.red, Color.green, petitioner.GetRoyalSupport() / 100f);
             }
         }
     }

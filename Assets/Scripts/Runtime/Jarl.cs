@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Concurrent;
-using MyBox;
 using Runtime;
 using UnityEngine;
 
@@ -47,7 +45,7 @@ namespace Assets.Scripts.Runtime {
             if (queue.TryGetPetitionerInFrontOfThrone(out var petitioner)) {
                 UpdateState(JarlState.Throw);
 
-                petitioner.royalSupport += royalSupportPerThrow;
+                petitioner.AddToRoyalSupport(royalSupportPerThrow);
 
                 RestartNoInputCoroutine();
 
@@ -74,7 +72,7 @@ namespace Assets.Scripts.Runtime {
             }
             else if (queue.TryGetPetitionerInFrontOfThrone(out var petitioner)) {
                 UpdateState(JarlState.Reject);
-                petitioner.royalSupport += royalSupportPerRejectSecond * timeSinceStart;
+                petitioner.AddToRoyalSupport(royalSupportPerRejectSecond * timeSinceStart);
 
                 if (noInputCoroutine != null) {
                     StopCoroutine(noInputCoroutine);

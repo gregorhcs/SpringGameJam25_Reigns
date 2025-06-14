@@ -3,7 +3,16 @@ using UnityEngine;
 
 namespace Assets.Scripts.Runtime {
     public class Petitioner : MonoBehaviour {
-        public float royalSupport = 0f;
+        float royalSupport = 0f;
+
+        public float GetRoyalSupport() {
+            return royalSupport;
+        }
+
+        public void AddToRoyalSupport(float amount) {
+            royalSupport = Mathf.Clamp(royalSupport + amount, 0f, 100f);
+        }
+
         public ConcernAsset concern = default;
         public FactionAsset faction => concern.faction;
         public bool isAtThrone => slot != null && slot.isThroneSlot;
@@ -44,6 +53,7 @@ namespace Assets.Scripts.Runtime {
             animator.Play("Walk", layer: 0, normalizedTime: 0f);
             slot.petitioner = null;
             slot = null;
+            concern.ExecuteOnConcern(royalSupport / 100f);
         }
 
         protected void Update() {
