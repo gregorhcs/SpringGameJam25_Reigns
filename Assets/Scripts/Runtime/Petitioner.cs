@@ -1,17 +1,15 @@
-﻿using Runtime;
+﻿using System;
+using Runtime;
 using UnityEngine;
 
 namespace Assets.Scripts.Runtime {
     public class Petitioner : MonoBehaviour {
+
+        public static event Action onPetitionerLeaves;
+
         float royalSupport = 0f;
-
-        public float GetRoyalSupport() {
-            return royalSupport;
-        }
-
-        public void AddToRoyalSupport(float amount) {
-            royalSupport = Mathf.Clamp(royalSupport + amount, 0f, 100f);
-        }
+        public float GetRoyalSupport() {  return royalSupport; }
+        public void AddToRoyalSupport(float amount) { royalSupport = Mathf.Clamp(royalSupport + amount, 0f, 100f); }
 
         public ConcernAsset concern = default;
         public FactionAsset faction => concern.faction;
@@ -54,6 +52,7 @@ namespace Assets.Scripts.Runtime {
             slot.petitioner = null;
             slot = null;
             concern.ExecuteOnConcern(royalSupport / 100f);
+            onPetitionerLeaves.Invoke();
         }
 
         protected void Update() {

@@ -33,6 +33,12 @@ namespace Assets.Scripts.Runtime {
         [SerializeField]
         GameObject queueEnd = default;
 
+        [SerializeField]
+        Petitioner petitionerPrefab = default;
+
+        [SerializeField]
+        ConcernsLibraryAsset concernsLibrary = default;
+
         List<PetitionerSlot> slots = new();
 
         protected void Start() {
@@ -41,8 +47,12 @@ namespace Assets.Scripts.Runtime {
                 slot.transform.position = Vector3.Lerp(queueStart.transform.position, queueEnd.transform.position, slotIndex / (numberOfSlotsToGenerate-1f));
                 slots.Add(slot);
             }
+
             slots.Last().isThroneSlot = true;
+
             StartCoroutine(SpawnInitialPetitioners());
+
+            Petitioner.onPetitionerLeaves += HandlePetitionerLeaves;
         }
 
         public bool TryGetPetitionerInFrontOfThrone(out Petitioner outPetitioner) {
@@ -88,13 +98,9 @@ namespace Assets.Scripts.Runtime {
             return target.transform.position.x < instigator.transform.position.x;
         }
 
-        // @TODO ghs: maybe move the code below into separate class?
-
-        [SerializeField]
-        Petitioner petitionerPrefab = default;
-
-        [SerializeField]
-        ConcernsLibraryAsset concernsLibrary = default;
+        void HandlePetitionerLeaves() {
+            SpawnPetitioner();
+        }
 
         Petitioner SpawnPetitioner(Transform overrideTransform = default) {
             var petitioner = Instantiate(petitionerPrefab);
