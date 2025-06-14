@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Faction_Peasants
   m_EditorClassIdentifier: 
   id: Peasants
-  startingLoyalty: 100
-  currentLoyalty: 30
+  startingLoyalty: 20
+  currentLoyalty: 100
   colorAsset: {fileID: -7876283649248279074, guid: ece2bccffaec64f49a8e99e7323d0ba5, type: 3}
   banner: {fileID: -1242682827576884657, guid: d5ab1b753e013c1449fd5225c51fd44f, type: 3}
   animatorController: {fileID: 6227694144673515183, guid: b932ddeba555a8b4fb5370e3c31bbca7, type: 3}
