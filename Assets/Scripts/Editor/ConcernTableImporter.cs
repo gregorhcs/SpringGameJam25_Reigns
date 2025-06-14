@@ -1,24 +1,38 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Runtime;
+using Slothsoft.UnityExtensions.Editor;
 using UnityEditor.AssetImporters;
 using UnityEngine;
 
 namespace Editor {
 
-    [ScriptedImporter(1, "concerns")]
+    [ScriptedImporter(VERSION, "concerns")]
     sealed class ConcernTableImporter : ScriptedImporter {
-        static int ROWS_TO_SKIP = 2;
-        static int NUM_COLUMNS = 10;
+        const int VERSION = 2;
+        const int ROWS_TO_SKIP = 2;
+        const int NUM_COLUMNS = 10;
 
         [SerializeField]
+        string[] factionPaths = Array.Empty<string>();
+
         FactionAsset[] factions;
 
         public override void OnImportAsset(AssetImportContext ctx) {
+
+            factions = new FactionAsset[factionPaths.Length];
+            for (int i = 0; i < factionPaths.Length; i++) {
+                if (!ctx.TryDependOnArtifact(factionPaths[i], out factions[i])) {
+                    Debug.LogError($"Missing FactionAsset at '{factionPaths[i]}'");
+                    return;
+                }
+            }
+
             string[] rows = File.ReadAllLines(ctx.assetPath);
 
             if (rows.Length <= ROWS_TO_SKIP) {
-                Debug.LogWarning($"[Concern CSV Import] Too few Rows in: {ctx.assetPath}. Need at least 2!");
+                Debug.LogError($"[Concern CSV Import] Too few Rows in: {ctx.assetPath}. Need at least 2!");
                 return;
             }
 
@@ -35,7 +49,7 @@ namespace Editor {
                 string[] columns = row.Split('\t');
 
                 if (columns.Length != NUM_COLUMNS) {
-                    Debug.LogWarning($"[Concern CSV Import] Row {rowIndex + 1} has the wrong number of columns ({columns.Length}, expected: {NUM_COLUMNS}) in: {ctx.assetPath}\n - {row}");
+                    Debug.LogError($"[Concern CSV Import] Row {rowIndex + 1} has the wrong number of columns ({columns.Length}, expected: {NUM_COLUMNS}) in: {ctx.assetPath}\n - {row}");
                     continue;
                 }
 
@@ -79,7 +93,7 @@ namespace Editor {
                 modifierDictionary.Add(affectedFaction, parsedModifier);
                 return true;
             } else {
-                Debug.LogWarning($"[Concern CSV Import] Row {rowIndex + 1}: Could not parse modifier from input '{inputString}'");
+                Debug.LogError($"[Concern CSV Import] Row {rowIndex + 1}: Could not parse modifier from input '{inputString}'");
                 parsedModifier = 0f;
                 return false;
             }

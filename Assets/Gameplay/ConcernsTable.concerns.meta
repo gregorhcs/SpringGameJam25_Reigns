@@ -8,8 +8,8 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: e112de845c3843749885ff55fc3fc3dd, type: 3}
-  factions:
-  - {fileID: 11400000, guid: 8317c2eb58c7e7647b38ed3a2622d6af, type: 2}
-  - {fileID: 11400000, guid: 7880d98152434394995600b1a4eadb16, type: 2}
-  - {fileID: 11400000, guid: e2b1667cfbc1785439bd36fdc2d9f963, type: 2}
-  - {fileID: 11400000, guid: 33adef3aa65f3f042ad16ef9581a67bf, type: 2}
+  factionPaths:
+  - Assets/Gameplay/Faction_Nobles.asset
+  - Assets/Gameplay/Faction_Peasants.asset
+  - Assets/Gameplay/Faction_Clerics.asset
+  - Assets/Gameplay/Faction_Merchants.asset
