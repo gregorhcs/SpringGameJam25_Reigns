@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Editor {
 
     [ScriptedImporter(1, "concerns")]
-    sealed class ConvernCsvImporter : ScriptedImporter {
+    sealed class ConcernTableImporter : ScriptedImporter {
         static int ROWS_TO_SKIP = 2;
         static int NUM_COLUMNS = 10;
 
