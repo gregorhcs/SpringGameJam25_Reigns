@@ -21,7 +21,7 @@ namespace Assets.Scripts.Runtime {
         PetitionerSlot slot = null;
         public bool isPhysicallyAtSlot = true;
 
-        bool isLeaving = false;
+        public bool isLeaving = false;
         Transform leavePoint = default;
 
         bool isSetUp = false;

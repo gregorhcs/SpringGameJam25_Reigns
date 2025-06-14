@@ -30,6 +30,9 @@ namespace Assets.Scripts.Runtime {
                 royalFeedbackNumber.text = petitioner.GetRoyalSupport().ToString("0");
                 colorLerpTarget.color = Color.Lerp(Color.red, Color.green, petitioner.GetRoyalSupport() / 100f);
             }
+            if (petitioner.isLeaving) {
+                speechText.text = "";
+            }
         }
     }
 }
