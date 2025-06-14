@@ -33,6 +33,7 @@ Transform:
   - {fileID: 3969506135833375227}
   - {fileID: 1661316483468926649}
   - {fileID: 1615453788335799337}
+  - {fileID: 546280631924853744}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &855973594203264667
@@ -52,6 +53,7 @@ MonoBehaviour:
   minSecToWaitBetweenSpawns: 0.02
   maxSecToWaitBetweenSpawns: 0.3
   petitionerSpawnPoint: {fileID: 1619934449255533571}
+  petitionerLeavePoint: {fileID: 7445045335201031371}
   queueStart: {fileID: 4417885000281608096}
   queueEnd: {fileID: 6792851564806404133}
   petitionerPrefab: {fileID: 5663602012977832459, guid: 45f3937982b07da489c9bb85db0e2f54, type: 3}
@@ -144,6 +146,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.619318, y: -2.9967566, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8720360384778220067}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7445045335201031371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 546280631924853744}
+  m_Layer: 0
+  m_Name: PetitionerLeave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &546280631924853744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7445045335201031371}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.43, y: -2.9967566, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

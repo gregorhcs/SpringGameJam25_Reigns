@@ -126,7 +126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   animator: {fileID: 9103876671980474281}
-  player: {fileID: 0}
   queue: {fileID: 0}
   royalSupportPerThrow: 0.1
   royalSupportPerRejectSecond: -0.1
@@ -183,6 +182,14 @@ PrefabInstance:
     - target: {fileID: 2130733099769792732, guid: 6dab2402f8f14d4428c1c5be7c30fb44, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987407960686277308, guid: 6dab2402f8f14d4428c1c5be7c30fb44, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987407960686277308, guid: 6dab2402f8f14d4428c1c5be7c30fb44, type: 3}
+      propertyPath: m_Size.y
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

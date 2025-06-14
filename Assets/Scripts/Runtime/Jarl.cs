@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Concurrent;
 using MyBox;
 using Runtime;
 using UnityEngine;
@@ -27,7 +28,11 @@ namespace Assets.Scripts.Runtime {
         [SerializeField]
         float quitTime = 30f;
 
+        [SerializeField]
+        float noInputTimeAtWhichToSendAwayPetitioner = 5f;
+
         Coroutine endThrowCoroutine = default;
+        Coroutine noInputCoroutine = default;
 
         protected void Start()
         {
@@ -41,7 +46,10 @@ namespace Assets.Scripts.Runtime {
         void InputThrow() {
             if (queue.TryGetPetitionerInFrontOfThrone(out var petitioner)) {
                 UpdateState(JarlState.Throw);
+
                 petitioner.royalSupport += royalSupportPerThrow;
+
+                RestartNoInputCoroutine();
 
                 if (endThrowCoroutine != null) {
                     StopCoroutine(endThrowCoroutine);
@@ -67,6 +75,10 @@ namespace Assets.Scripts.Runtime {
             else if (queue.TryGetPetitionerInFrontOfThrone(out var petitioner)) {
                 UpdateState(JarlState.Reject);
                 petitioner.royalSupport += royalSupportPerRejectSecond * timeSinceStart;
+
+                if (noInputCoroutine != null) {
+                    StopCoroutine(noInputCoroutine);
+                }
             }
             else {
                 UpdateState(JarlState.Idle);
@@ -75,6 +87,21 @@ namespace Assets.Scripts.Runtime {
 
         void InputRejectEnd() {
             UpdateState(JarlState.Idle);
+            RestartNoInputCoroutine();
+        }
+
+        void RestartNoInputCoroutine() {
+            if (noInputCoroutine != null) {
+                StopCoroutine(noInputCoroutine);
+            }
+            noInputCoroutine = StartCoroutine(SendAwayPetitionerIfNoInput());
+        }
+
+        IEnumerator SendAwayPetitionerIfNoInput() {
+            yield return new WaitForSeconds(noInputTimeAtWhichToSendAwayPetitioner);
+            if (queue.TryGetPetitionerInFrontOfThrone(out var petitioner)) {
+                petitioner.Leave();
+            }
         }
 
         void UpdateState(JarlState newState) {
