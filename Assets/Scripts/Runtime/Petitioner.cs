@@ -53,7 +53,11 @@ namespace Assets.Scripts.Runtime {
             animator.Play("Walk", layer: 0, normalizedTime: 0f);
             slot.petitioner = null;
             slot = null;
-            concern.ExecuteOnConcern(royalSupport / 100f);
+
+            if (BalancingLogs.enabled) {
+                Debug.Log($"Concern: {concern}");
+            }
+            concern.ExecuteOnConcern(royalSupport);
             onPetitionerLeaves.Invoke();
         }
 
