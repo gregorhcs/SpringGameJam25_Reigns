@@ -49,8 +49,9 @@ namespace Assets.Scripts.Runtime {
                 slot.transform.position = Vector3.Lerp(queueStart.transform.position, queueEnd.transform.position, slotIndex / (numberOfSlotsToGenerate-1f));
                 slots.Add(slot);
             }
-
             slots.Last().isThroneSlot = true;
+
+            concernsLibrary.SetUp();
 
             StartCoroutine(SpawnInitialPetitioners());
 
@@ -106,7 +107,7 @@ namespace Assets.Scripts.Runtime {
 
         Petitioner SpawnPetitioner(Transform overrideTransform = default) {
             var petitioner = Instantiate(petitionerPrefab);
-            var concern = concernsLibrary.concerns[Random.Range(0, concernsLibrary.concerns.Count)];
+            var concern = concernsLibrary.NextConcern();
             petitioner.SetUp(overrideTransform ? overrideTransform : petitionerSpawnPoint.transform, petitionerLeavePoint.transform, concern, this);
             return petitioner;
         }
