@@ -46,10 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b047c7ad673b6c43b36d56e01dbf8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAtThrone: 0
+  slot: {fileID: 0}
+  isPhysicallyAtSlot: 1
+  queue: {fileID: 0}
   royalSupport: 50
   concern: {fileID: 0}
   animator: {fileID: -5144078725056251342}
+  speed: 1.4
 --- !u!212 &-4256775892510171508
 SpriteRenderer:
   m_ObjectHideFlags: 0

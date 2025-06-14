@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Runtime;
@@ -10,6 +11,12 @@ namespace Assets.Scripts.Runtime {
 
         [SerializeField]
         int numberOfSlotsToGenerate = 10;
+
+        [SerializeField]
+        float minSecToWaitBetweenSpawns = 0.1f;
+
+        [SerializeField]
+        float maxSecToWaitBetweenSpawns = 0.3f;
 
         [SerializeField]
         GameObject petitionerSpawnPoint = default;
@@ -29,8 +36,34 @@ namespace Assets.Scripts.Runtime {
                 slots.Add(slot);
             }
             slots.Last().isThroneSlot = true;
+            StartCoroutine(SpawnInitialPetitioners());
+        }
 
-            SpawnPetitioner();
+        IEnumerator SpawnInitialPetitioners() {
+            for (int i = 0; i < numberOfSlotsToGenerate; i++) {
+                SpawnPetitioner();
+                yield return new WaitForSeconds(Random.Range(minSecToWaitBetweenSpawns, maxSecToWaitBetweenSpawns));
+            }
+            yield return null;
+        }
+
+        public bool FindFreeSlotInFrontOf(GameObject instigator, out PetitionerSlot outSlot) {
+            outSlot = null;
+            foreach (var slot in slots) {
+                if (IsInFrontOf(instigator, slot.gameObject)) {
+                    if (!slot.IsFree()) {
+                        // non-free slot ahead, can't jump lines so stop search!
+                        return false;
+                    }
+                    outSlot = slot;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        bool IsInFrontOf(GameObject instigator, GameObject target) {
+            return target.transform.position.x < instigator.transform.position.x;
         }
 
         // @TODO ghs: maybe move the code below into separate class?
@@ -45,7 +78,7 @@ namespace Assets.Scripts.Runtime {
             var petitioner = Instantiate(petitionerPrefab);
 
             var concern = concernsLibrary.concerns[Random.Range(0, concernsLibrary.concerns.Count)];
-            petitioner.SetUp(petitionerSpawnPoint.transform, concern);
+            petitioner.SetUp(petitionerSpawnPoint.transform, concern, this);
 
             return petitioner;
         }
