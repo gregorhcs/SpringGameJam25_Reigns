@@ -5,7 +5,8 @@
         "Slothsoft.Aseprite",
         "Slothsoft.UnityExtensions",
         "MyBox",
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

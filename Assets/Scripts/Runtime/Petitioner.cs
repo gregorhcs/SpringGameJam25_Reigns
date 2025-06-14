@@ -6,6 +6,7 @@ namespace Assets.Scripts.Runtime {
         public float royalSupport = 0f;
         public ConcernAsset concern = default;
         public FactionAsset faction => concern.faction;
+        public bool isAtThrone => slot != null && slot.isThroneSlot;
 
         PetitionerQueue queue = null;
         PetitionerSlot slot = null;
@@ -16,12 +17,14 @@ namespace Assets.Scripts.Runtime {
 
         bool isSetUp = false;
 
-
         [SerializeField]
         Animator animator = default;
 
         [SerializeField]
         float speed = 0.4f;
+
+        [SerializeField]
+        Vector2 leaveDirection = new(-1.7f, -1f);
 
         public void SetUp(Transform spawnPoint, Transform inLeavePoint, ConcernAsset inConcern, PetitionerQueue inQueue) {
             transform.SetPositionAndRotation(spawnPoint.position, spawnPoint.rotation);
@@ -39,6 +42,8 @@ namespace Assets.Scripts.Runtime {
         public void Leave() {
             isLeaving = true;
             animator.Play("Walk", layer: 0, normalizedTime: 0f);
+            slot.petitioner = null;
+            slot = null;
         }
 
         protected void Update() {
@@ -54,7 +59,7 @@ namespace Assets.Scripts.Runtime {
         }
 
         void UpdateLeaving() {
-            var delta = speed * Time.deltaTime * Vector3.down;
+            var delta = speed * Time.deltaTime * Vector3.Normalize(new(leaveDirection.x, leaveDirection.y, 0f));
             float overshoot = leavePoint.position.y - (transform.position.y + delta.y);
 
             transform.position += delta;
