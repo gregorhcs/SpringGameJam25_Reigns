@@ -24,6 +24,8 @@ namespace Assets.Scripts.Runtime {
 
         bool isSetUp = false;
 
+        Vector3 targetPosition = default;
+
         [SerializeField]
         Animator animator = default;
 
@@ -87,13 +89,14 @@ namespace Assets.Scripts.Runtime {
 
                     slot = newSlot;
                     slot.petitioner = this;
+                    targetPosition = slot.transform.position + (Vector3.left * UnityEngine.Random.Range(0f, queue.spaceBetweenSlots));
 
                     isPhysicallyAtSlot = false;
                     animator.Play("Walk", layer: 0, normalizedTime: 0f);
                 }
             } else {
                 var delta = speed * Time.deltaTime * Vector3.left;
-                float overshoot = slot.transform.position.x - (transform.position.x + delta.x);
+                float overshoot = targetPosition.x - (transform.position.x + delta.x);
 
                 transform.position += delta;
 
