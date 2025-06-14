@@ -24,7 +24,7 @@ namespace Assets.Scripts.Runtime {
 
         protected void Update()
         {
-            if (petitioner.isAtThrone) {
+            if (petitioner.isAtThrone && petitioner.isPhysicallyAtSlot) {
                 rootPanel.enabled = true;
                 speechText.text = petitioner.concern.speech;
                 royalFeedbackNumber.text = petitioner.GetRoyalSupport().ToString("0");
