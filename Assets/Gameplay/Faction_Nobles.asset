@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52c9d74635164c49bb89493d0f087a6, type: 3}
   m_Name: Faction_Nobles
   m_EditorClassIdentifier: 
+  id: Nobles
   startingLoyalty: 50
   currentLoyalty: 50
   color: {r: 0.56098515, g: 0.20143577, b: 0.61006284, a: 1}
+  animatorController: {fileID: 6227694144673515183, guid: dd7c14515b7743644b0f17f213b2329d, type: 3}
