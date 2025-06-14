@@ -53,9 +53,12 @@ namespace Editor {
                     continue;
                 }
 
-                string petitioningFactionString = columns[0];
-
                 var concern = ScriptableObject.CreateInstance<ConcernAsset>();
+
+                if (!TryParseFaction(columns[0], out concern.faction)) {
+                    continue;
+                }
+
                 concern.speech = columns[1];
 
                 if (!TryParseLoyalityModifierColumns(rowIndex, columns, concern)) {
@@ -63,11 +66,10 @@ namespace Editor {
                     continue;
                 }
 
-                if (!counter.ContainsKey(petitioningFactionString)) {
-                    counter[petitioningFactionString] = 0;
+                if (!counter.ContainsKey(concern.faction.id)) {
+                    counter[concern.faction.id] = 0;
                 }
-
-                concern.name = $"Concern_{petitioningFactionString}_{counter[petitioningFactionString]++}";
+                concern.name = $"Concern_{concern.faction.id}_{counter[concern.faction.id]++}";
                 ctx.AddObjectToAsset(concern.name, concern);
             }
         }
@@ -97,6 +99,17 @@ namespace Editor {
                 parsedModifier = 0f;
                 return false;
             }
+        }
+
+        bool TryParseFaction(string inputString, out FactionAsset outFaction) {
+            foreach (var faction in factions) {
+                if (faction.id ==  inputString) {
+                    outFaction = faction;
+                    return true;
+                }
+            }
+            outFaction = null;
+            return false;
         }
     }
 }
