@@ -3,9 +3,8 @@ using UnityEngine;
 
 namespace Assets.Scripts.Runtime {
     public class Petitioner : MonoBehaviour {
-        public float receivedPositiveFeedback = 0f;
-        public float receivedNegativeFeedback = 0f;
-
+        public bool isAtThrone = false;
+        public float royalSupport = 50f;
         public ConcernAsset concern = default;
     }
 }
