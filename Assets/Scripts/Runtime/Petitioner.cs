@@ -26,6 +26,8 @@ namespace Assets.Scripts.Runtime {
             concern = inConcern;
             queue = inQueue;
 
+            animator.Play("Idle", layer: 0, normalizedTime: 0f);
+
             isSetUp = true;
         }
 
@@ -44,17 +46,18 @@ namespace Assets.Scripts.Runtime {
                     slot.petitioner = this;
 
                     isPhysicallyAtSlot = false;
+                    animator.Play("Walk", layer: 0, normalizedTime: 0f);
                 }
             }
             else {
                 var delta = speed * Time.deltaTime * Vector3.left;
                 float overshoot = slot.transform.position.x - (transform.position.x + delta.x);
-                //delta.x += overshoot;
 
                 transform.position += delta;
 
                 if (overshoot > 0) {
                     isPhysicallyAtSlot = true;
+                    animator.Play("Idle", layer: 0, normalizedTime: 0f);
                 }
             }
         }
