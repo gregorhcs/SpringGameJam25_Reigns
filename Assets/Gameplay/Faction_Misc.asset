@@ -15,5 +15,5 @@ MonoBehaviour:
   id: Misc
   startingLoyalty: 50
   currentLoyalty: 50
-  color: {r: 1, g: 1, b: 1, a: 1}
+  colorAsset: {fileID: -4442065655216005493, guid: ece2bccffaec64f49a8e99e7323d0ba5, type: 3}
   animatorController: {fileID: 6227694144673515183, guid: dd7c14515b7743644b0f17f213b2329d, type: 3}
