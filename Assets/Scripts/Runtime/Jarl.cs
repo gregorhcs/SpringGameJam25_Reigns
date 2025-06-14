@@ -18,25 +18,21 @@ namespace Assets.Scripts.Runtime {
         float royalSupportPerThrow = 0.1f;
 
         [SerializeField]
-        float royalSupportPerRejectSecond = -0.1f;
-
-        [SerializeField]
-        float maxRejectTime = 15f;
+        float maxSendAwayTime = 15f;
 
         [SerializeField]
         float quitTime = 30f;
 
         [SerializeField]
-        float noInputTimeAtWhichToSendAwayPetitioner = 5f;
+        float throwAnimActiveTime = 0.3f;
 
         Coroutine endThrowCoroutine = default;
-        Coroutine noInputCoroutine = default;
 
         protected void Start()
         {
             PlayerAsset.onShortInteract += InputThrow;
-            PlayerAsset.onLongInteractProgress += InputRejectProgress;
-            PlayerAsset.onLongInteract += InputRejectEnd;
+            PlayerAsset.onLongInteractProgress += InputLongProgress;
+            PlayerAsset.onLongInteract += InputSendAway;
 
             UpdateState(JarlState.Idle);
         }
@@ -47,8 +43,6 @@ namespace Assets.Scripts.Runtime {
 
                 petitioner.AddToRoyalSupport(royalSupportPerThrow);
 
-                RestartNoInputCoroutine();
-
                 if (endThrowCoroutine != null) {
                     StopCoroutine(endThrowCoroutine);
                 }
@@ -57,48 +51,31 @@ namespace Assets.Scripts.Runtime {
         }
 
         IEnumerator EndThrowAnimation() {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(throwAnimActiveTime);
             if (state  == JarlState.Throw) {
                 UpdateState(JarlState.Idle);
             }
         }
 
-        void InputRejectProgress(float timeSinceStart) {
-            if (timeSinceStart > quitTime) {
-                QuitGameHelper.Quit();
-            }
-            else if (timeSinceStart > maxRejectTime) {
-                UpdateState(JarlState.Leave);
-            }
-            else if (queue.TryGetPetitionerInFrontOfThrone(out var petitioner)) {
-                UpdateState(JarlState.Reject);
-                petitioner.AddToRoyalSupport(royalSupportPerRejectSecond * timeSinceStart);
+        void InputLongProgress(float timeSinceStart) {
+            //if (timeSinceStart > quitTime) {
+            //    QuitGameHelper.Quit();
+            //}
+            //else if (timeSinceStart > maxSendAwayTime) {
+            //    UpdateState(JarlState.Leave);
+            //}
+            //else {
+            //    UpdateState(JarlState.Reject);
+            //}
+            UpdateState(JarlState.Reject);
+        }
 
-                if (noInputCoroutine != null) {
-                    StopCoroutine(noInputCoroutine);
-                }
-            }
-            else {
+        void InputSendAway() {
+            if (state == JarlState.Reject) {
                 UpdateState(JarlState.Idle);
-            }
-        }
-
-        void InputRejectEnd() {
-            UpdateState(JarlState.Idle);
-            RestartNoInputCoroutine();
-        }
-
-        void RestartNoInputCoroutine() {
-            if (noInputCoroutine != null) {
-                StopCoroutine(noInputCoroutine);
-            }
-            noInputCoroutine = StartCoroutine(SendAwayPetitionerIfNoInput());
-        }
-
-        IEnumerator SendAwayPetitionerIfNoInput() {
-            yield return new WaitForSeconds(noInputTimeAtWhichToSendAwayPetitioner);
-            if (queue.TryGetPetitionerInFrontOfThrone(out var petitioner)) {
-                petitioner.Leave();
+                if (queue.TryGetPetitionerInFrontOfThrone(out var petitioner)) {
+                    petitioner.Leave();
+                }
             }
         }
 

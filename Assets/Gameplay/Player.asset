@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   shortInteractionDuration: 0.2
-  longInteractionDuration: 15
+  longInteractionDuration: 3
   isInteracting: 0
-  interactionTime: 60.0597
+  interactionTime: 34.207283
   longInteractionDone: 0

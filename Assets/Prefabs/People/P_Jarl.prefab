@@ -128,10 +128,10 @@ MonoBehaviour:
   animator: {fileID: 9103876671980474281}
   queue: {fileID: 0}
   royalSupportPerThrow: 5
-  royalSupportPerRejectSecond: -1
-  maxRejectTime: 15
+  maxSendAwayTime: 15
   quitTime: 30
   noInputTimeAtWhichToSendAwayPetitioner: 5
+  throwAnimActiveTime: 0.15
 --- !u!1001 &4664481963265131741
 PrefabInstance:
   m_ObjectHideFlags: 0

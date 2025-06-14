@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotPrefab: {fileID: -2968188092595102496, guid: c2a3e3837622d2d4697f38ec7a087a8c, type: 3}
-  numberOfSlotsToGenerate: 10
-  numberOfPetitionersToSpawn: 10
+  numberOfSlotsToGenerate: 7
+  numberOfPetitionersToSpawn: 7
   minSecToWaitBetweenSpawns: 0.02
   maxSecToWaitBetweenSpawns: 10
   petitionerSpawnPoint: {fileID: 1619934449255533571}
