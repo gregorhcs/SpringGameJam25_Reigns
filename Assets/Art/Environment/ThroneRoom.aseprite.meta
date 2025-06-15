@@ -40,7 +40,7 @@ ScriptedImporter:
           extrude: 0
           meshType: 0
           generateFallbackPhysicsShape: 0
-          includeHiddenLayers: 0
+          includeHiddenLayers: 1
           extractEmission: 1
           emissionLayerName: Emission
           emissionTextureName: _EmissionTex
