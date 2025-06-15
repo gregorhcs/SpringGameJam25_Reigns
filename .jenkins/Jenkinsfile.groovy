@@ -51,7 +51,7 @@ pipeline {
 							STEAM_CREDENTIALS : '',
 
 							// configuration for deploying to itch
-							ITCH_ID : 'gregorsoenn/kingdom',
+							ITCH_ID : 'gregorsoenn/press-for-peace',
 							ITCH_CREDENTIALS : 'Faulo-itch.io',
 
 							// configuration for deploying to Discord
