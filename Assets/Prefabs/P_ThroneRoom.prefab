@@ -260,10 +260,10 @@ MonoBehaviour:
   m_LightType: 1
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.98631865, b: 0.51886785, a: 1}
+  m_Color: {r: 1, g: 0.99504876, b: 0.797, a: 1}
   m_Intensity: 1
-  m_LightVolumeIntensity: 0.015625
-  m_LightVolumeEnabled: 0
+  m_LightVolumeIntensity: 0.004
+  m_LightVolumeEnabled: 1
   m_ApplyToSortingLayers: ad7943a6000000001fd111c545a683c4
   m_LightCookieSprite: {fileID: 4979376876150585179, guid: d5ab1b753e013c1449fd5225c51fd44f, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
@@ -273,15 +273,15 @@ MonoBehaviour:
   m_NormalMapDistance: 3
   m_NormalMapQuality: 1
   m_UseNormalMap: 0
-  m_ShadowsEnabled: 1
+  m_ShadowsEnabled: 0
   m_ShadowIntensity: 0.75
   m_ShadowSoftness: 0.3
   m_ShadowSoftnessFalloffIntensity: 0.5
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 2.5001001, y: -2.49995, z: 0}
-    m_Extent: {x: 6.4994, y: 5.49965, z: 0}
+    m_Center: {x: 2.50035, y: -2.9998999, z: 0}
+    m_Extent: {x: 6.4991503, y: 4.9997, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -292,13 +292,13 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 1
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -1, y: 1.5, z: 0}
+  - {x: -0.75, y: 0.25, z: 0}
   - {x: -3, y: -6.5, z: 0}
   - {x: 0.5, y: -6.5, z: 0}
   - {x: 1, y: -7, z: 0}
   - {x: 8, y: -7, z: 0}
-  - {x: 1, y: 1.5, z: 0}
-  - {x: 0, y: 2, z: 0}
+  - {x: 0.75, y: 0.25, z: 0}
+  - {x: 0, y: 1, z: 0}
 --- !u!1001 &253268942915844849
 PrefabInstance:
   m_ObjectHideFlags: 0
