@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d810d7edcf46b45a84a2e1951393b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killY: -2
+  killY: -3
   onKillEvent:
     m_PersistentCalls:
       m_Calls:
