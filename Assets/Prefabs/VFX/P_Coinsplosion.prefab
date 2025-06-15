@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5170130030626075360}
   - component: {fileID: 3673727374997464831}
   - component: {fileID: 4510909684371328360}
+  - component: {fileID: 1275297451139916700}
   m_Layer: 0
   m_Name: P_Coinsplosion
   m_TagString: Untagged
@@ -4989,3 +4990,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1275297451139916700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8324213182453149415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ac5743fb0ab1284b80284ac93e32317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minPitch: 0.6
+  maxPitch: 0.8
