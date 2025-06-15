@@ -29,6 +29,9 @@ namespace Runtime {
         [SerializeField]
         internal RuntimeAnimatorController animatorController = default;
 
+        [SerializeField]
+        internal Sprite sprite = default;
+
         public void SetUp() {
             currentLoyalty = startingLoyalty;
         }
