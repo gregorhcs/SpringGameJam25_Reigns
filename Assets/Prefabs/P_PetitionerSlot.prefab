@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8df30edf08b7f24e8d5df3aa08826fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteOrderIndex: 0
   isThroneSlot: 0
-  petitioner: {fileID: 0}
+  m_petitioner: {fileID: 0}
 --- !u!212 &7805308297998249343
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -54,7 +55,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9082400275357110708}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

@@ -100,13 +100,16 @@ namespace Assets.Scripts.Runtime {
 
                     slot = newSlot;
                     slot.petitioner = this;
-                    targetPosition = slot.transform.position + (Vector3.left * UnityEngine.Random.Range(0f, queue.spaceBetweenSlots));
+
+                    var targetOffset = slot.isThroneSlot ? Vector3.zero : Vector3.left * UnityEngine.Random.Range(0f, queue.spaceBetweenSlots);
+                    targetPosition = slot.transform.position + targetOffset;
 
                     isPhysicallyAtSlot = false;
                     animator.Play("Walk", layer: 0, normalizedTime: 0f);
                 }
             } else {
-                var delta = speed * Time.deltaTime * Vector3.left;
+                var directionNormalized = Vector3.Normalize(targetPosition - transform.position);
+                var delta = speed * Time.deltaTime * directionNormalized;
                 float overshoot = targetPosition.x - (transform.position.x + delta.x);
 
                 transform.position += delta;
