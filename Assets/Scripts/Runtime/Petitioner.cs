@@ -64,7 +64,7 @@ namespace Assets.Scripts.Runtime {
             }
 
             concern.ExecuteOnConcern(royalSupport);
-            onPetitionerLeaves.Invoke(this);
+            onPetitionerLeaves?.Invoke(this);
 
             DestroyStack();
         }
