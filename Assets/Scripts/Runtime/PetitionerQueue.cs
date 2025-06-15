@@ -46,9 +46,11 @@ namespace Assets.Scripts.Runtime {
         protected void Start() {
             for (int slotIndex = 0; slotIndex < numberOfSlotsToGenerate; slotIndex++) {
                 var slot = Instantiate(slotPrefab);
-                slot.transform.position = Vector3.Lerp(queueStart.transform.position, queueEnd.transform.position, slotIndex / (numberOfSlotsToGenerate-1f));
+                slot.spriteOrderIndex = slotIndex;
+                slot.transform.position = Vector3.Lerp(queueStart.transform.position, queueEnd.transform.position, slotIndex / (numberOfSlotsToGenerate - 1f));
                 slots.Add(slot);
             }
+
             slots.Last().isThroneSlot = true;
 
             concernsLibrary.SetUp();
@@ -66,6 +68,7 @@ namespace Assets.Scripts.Runtime {
                     return slot.petitioner;
                 }
             }
+
             return false;
         }
 
@@ -76,6 +79,7 @@ namespace Assets.Scripts.Runtime {
                 float delay = Random.Range(minSecToWaitBetweenSpawns, maxSecToWaitBetweenSpawns);
                 yield return new WaitForSeconds(delay);
             }
+
             yield return null;
         }
 
@@ -87,13 +91,13 @@ namespace Assets.Scripts.Runtime {
                     if (!slot.IsFree()) {
                         // non-free slot ahead, can't jump lines so stop search!
                         return outSlot != null;
-                    }
-                    else {
+                    } else {
                         // found a slot that is farer away and free, target that one
                         outSlot = slot;
                     }
                 }
             }
+
             return outSlot != null;
         }
 
