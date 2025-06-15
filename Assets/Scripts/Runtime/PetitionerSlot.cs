@@ -5,6 +5,8 @@ namespace Assets.Scripts.Runtime {
         [SerializeField]
         public int spriteOrderIndex = 0;
         [SerializeField]
+        public bool setSpriteOrderIndex = false;
+        [SerializeField]
         public bool isThroneSlot = false;
 
         [SerializeField]
@@ -14,7 +16,7 @@ namespace Assets.Scripts.Runtime {
             set {
                 m_petitioner = value;
 
-                if (value && value.TryGetComponent<SpriteRenderer>(out var renderer)) {
+                if (setSpriteOrderIndex && value && value.TryGetComponent<SpriteRenderer>(out var renderer)) {
                     renderer.sortingOrder = spriteOrderIndex;
                 }
             }
