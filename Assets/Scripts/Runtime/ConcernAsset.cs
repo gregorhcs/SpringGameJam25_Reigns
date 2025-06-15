@@ -35,15 +35,11 @@ namespace Runtime {
                     Debug.Log($" + {summand} * {royalSupportMultiplier} == {summandFinal}");
                     Debug.Log($" * (({multiplier} - 1f) * {royalSupportMultiplier}) + 1f == {multiplierFinal}");
                     Debug.Log($" --> {affectedFaction.GetLoyalty()} -> {affectedFaction.GetLoyalty() + summandFinal}");
+                    float preCalcNewLoyalty = affectedFaction.GetLoyalty() + summandFinal;
+                    Debug.Log($" --> {preCalcNewLoyalty} -> {preCalcNewLoyalty * multiplierFinal}");
                 }
 
-                affectedFaction.AddToLoyalty(summandFinal);
-
-                if (BalancingLogs.enabled) {
-                    Debug.Log($" --> {affectedFaction.GetLoyalty()} -> {affectedFaction.GetLoyalty() * multiplierFinal}");
-                }
-
-                affectedFaction.MultToLoyalty(multiplierFinal);
+                affectedFaction.ModifyLoyalty(summandFinal, multiplierFinal);
             }
         }
     }

@@ -101,7 +101,7 @@ namespace Assets.Scripts.Runtime {
             return target.transform.position.x < instigator.transform.position.x;
         }
 
-        void HandlePetitionerLeaves() {
+        void HandlePetitionerLeaves(Petitioner leavingPetitioner) {
             SpawnPetitioner();
         }
 
