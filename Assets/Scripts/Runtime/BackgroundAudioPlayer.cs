@@ -4,28 +4,21 @@ using UnityEngine;
 namespace GameJam {
     sealed class BackgroundAudioManager : MonoBehaviour {
         [SerializeField]
-        AudioClip backgroundMusic = default;
-
-        [SerializeField]
-        AudioClip introCue = default;
-
-        [SerializeField]
-        AudioSource audioSource = default;
+        AudioSource intro = default;
 
         [SerializeField]
         float delayafterIntroCue = 0.4f;
 
-        IEnumerator Start()
-        {
-            audioSource.PlayOneShot(introCue);
-            yield return new WaitForSeconds(introCue.length);
-            yield return new WaitForSeconds(delayafterIntroCue);
+        [SerializeField]
+        AudioSource bgm = default;
 
-            audioSource.clip = backgroundMusic;
-            audioSource.loop = true;
-            audioSource.Play();
+        IEnumerator Start() {
 
-            yield return null;
+            intro.Play();
+
+            yield return new WaitForSeconds(intro.clip.length + delayafterIntroCue);
+
+            bgm.Play();
         }
     }
 }
