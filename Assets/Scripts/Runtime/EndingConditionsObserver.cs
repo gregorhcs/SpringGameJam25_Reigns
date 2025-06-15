@@ -23,6 +23,11 @@ namespace Runtime {
             GameState.ChangeHasEnded(false);
         }
 
+        void Unsubscribe() {
+            Petitioner.onPetitionerLeaves -= HandlePetitionerLeaves;
+            FactionAsset.onFactionLoyaltyReachesZero -= HandleFactionLoyaltyReachesZero;
+        }
+
         void HandlePetitionerLeaves(Petitioner leavingPetitioner) {
             highscoresAsset.currentRun.handledConcerns++;
 
@@ -30,6 +35,7 @@ namespace Runtime {
                 highscoresAsset.currentRun.endTime = DateTime.Now;
                 highscoresAsset.currentRun.died = true;
                 highscoresAsset.highscores.Add(highscoresAsset.currentRun);
+                Unsubscribe();
                 GameState.ChangeHasEnded(true);
                 endScreen.Open();
                 Debug.Log("Died of old age!");
@@ -40,6 +46,7 @@ namespace Runtime {
             highscoresAsset.currentRun.endTime = DateTime.Now;
             highscoresAsset.currentRun.died = false;
             highscoresAsset.highscores.Add(highscoresAsset.currentRun);
+            Unsubscribe();
             GameState.ChangeHasEnded(true);
             endScreen.Open();
             Debug.Log("Cast down by rebels!");

@@ -1,7 +1,6 @@
 ﻿using System;
 using Runtime;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Assets.Scripts.Runtime {
     public class Petitioner : MonoBehaviour {
@@ -64,7 +63,7 @@ namespace Assets.Scripts.Runtime {
             }
 
             concern.ExecuteOnConcern(royalSupport);
-            onPetitionerLeaves.Invoke(this);
+            onPetitionerLeaves?.Invoke(this);
 
             DestroyStack();
         }

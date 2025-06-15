@@ -36,7 +36,7 @@ namespace Runtime {
             currentLoyalty = Mathf.Clamp(currentLoyalty + summand, 0f, 100f);
             currentLoyalty = Mathf.Clamp(currentLoyalty * factor, 0f, 100f);
             if (Mathf.Approximately(currentLoyalty, 0f)) {
-                onFactionLoyaltyReachesZero.Invoke(this);
+                onFactionLoyaltyReachesZero?.Invoke(this);
             }
         }
 
