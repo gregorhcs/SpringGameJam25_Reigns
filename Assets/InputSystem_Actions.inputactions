@@ -15,9 +15,45 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "New action",
+                    "name": "F1",
                     "type": "Button",
                     "id": "0a1324f1-8d6f-43fd-8fa3-739953203e3b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "F2",
+                    "type": "Button",
+                    "id": "3fb2ff99-9065-4d5d-a03f-8d643448fcda",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "F3",
+                    "type": "Button",
+                    "id": "2784c494-7d31-4594-ade7-a2786a7d784e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "F4",
+                    "type": "Button",
+                    "id": "a24dc951-e04a-4e5a-b856-cfdbf00fbdbd",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "F5",
+                    "type": "Button",
+                    "id": "0fb2e233-b406-4138-9568-d3c21e833b6a",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -105,11 +141,55 @@
                 {
                     "name": "",
                     "id": "d47fb297-e8cd-4853-8125-21d23b4f86a8",
-                    "path": "",
+                    "path": "<Keyboard>/f1",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "F1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "144a5b33-1b73-4836-a3be-0f42744aee76",
+                    "path": "<Keyboard>/f2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "F2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e56d1b76-6d32-4750-9e38-cde637ccb078",
+                    "path": "<Keyboard>/f3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "F3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0bc0c14b-330c-45c3-b02e-fd0a70d68cd2",
+                    "path": "<Keyboard>/f4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "F4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "110896f3-b3c6-4676-8a78-2277688f3327",
+                    "path": "<Keyboard>/f5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "F5",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

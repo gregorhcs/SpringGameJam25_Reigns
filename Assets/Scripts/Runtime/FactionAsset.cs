@@ -40,6 +40,10 @@ namespace Runtime {
             }
         }
 
+        public void ModifyLoyalty(float amount) {
+            ModifyLoyalty(amount, 1);
+        }
+
         public float GetLoyalty() {
             return currentLoyalty;
         }

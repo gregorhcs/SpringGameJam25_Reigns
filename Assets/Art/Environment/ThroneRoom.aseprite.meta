@@ -30,7 +30,7 @@ ScriptedImporter:
           singleSlice: 
           useTilesetLayers: 0
           splitByTileGrid: 0
-          splitByLayers: 0
+          splitByLayers: 1
           splitByTags: 0
           splitBySlices: 0
           exportAsSheet: 1
