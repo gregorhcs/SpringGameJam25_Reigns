@@ -462,6 +462,7 @@ MonoBehaviour:
   animator: {fileID: -5144078725056251342}
   speed: 1.7
   leaveDirection: {x: -1.7, y: -1}
+  maxYOffsetFromSlot: 2
   stackPrefab: {fileID: 8184935944889215402, guid: 38c31d063bcb3384db49243723bb32fc, type: 3}
   stackPivot: {fileID: 5617145697083311996}
 --- !u!212 &-4256775892510171508

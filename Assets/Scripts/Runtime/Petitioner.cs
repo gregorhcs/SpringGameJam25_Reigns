@@ -39,6 +39,9 @@ namespace Assets.Scripts.Runtime {
         [SerializeField]
         Vector2 leaveDirection = new(-1.7f, -1f);
 
+        [SerializeField]
+        float maxYOffsetFromSlot = 1f;
+
         public void SetUp(Transform spawnPoint, Transform inLeavePoint, ConcernAsset inConcern, PetitionerQueue inQueue) {
             transform.SetPositionAndRotation(spawnPoint.position, spawnPoint.rotation);
             animator.runtimeAnimatorController = inConcern.faction.animatorController;
@@ -100,13 +103,17 @@ namespace Assets.Scripts.Runtime {
 
                     slot = newSlot;
                     slot.petitioner = this;
-                    targetPosition = slot.transform.position + (Vector3.left * UnityEngine.Random.Range(0f, queue.spaceBetweenSlots));
+
+                    var targetOffsetX = slot.isThroneSlot ? Vector3.zero : Vector3.left * UnityEngine.Random.Range(0f, queue.spaceBetweenSlots);
+                    var targetOffsetY = slot.isThroneSlot ? Vector3.zero : Vector3.up * UnityEngine.Random.Range(-maxYOffsetFromSlot, maxYOffsetFromSlot);
+                    targetPosition = slot.transform.position + targetOffsetX + targetOffsetY;
 
                     isPhysicallyAtSlot = false;
                     animator.Play("Walk", layer: 0, normalizedTime: 0f);
                 }
             } else {
-                var delta = speed * Time.deltaTime * Vector3.left;
+                var directionNormalized = Vector3.Normalize(targetPosition - transform.position);
+                var delta = speed * Time.deltaTime * directionNormalized;
                 float overshoot = targetPosition.x - (transform.position.x + delta.x);
 
                 transform.position += delta;

@@ -31,7 +31,7 @@ namespace Runtime {
         void HandlePetitionerLeaves(Petitioner leavingPetitioner) {
             highscoresAsset.currentRun.handledConcerns++;
 
-            if (highscoresAsset.currentRun.year == 82) {
+            if (highscoresAsset.currentRun.year == 40) {
                 highscoresAsset.currentRun.endTime = DateTime.Now;
                 highscoresAsset.currentRun.died = true;
                 highscoresAsset.highscores.Add(highscoresAsset.currentRun);

@@ -39,6 +39,9 @@ namespace Assets.Scripts.Runtime {
         [SerializeField]
         ConcernsLibraryAsset concernsLibrary = default;
 
+        [SerializeField]
+        Vector3 throneSlotOffset = new(-10f, 10f, 0f);
+
         public float spaceBetweenSlots => (queueStart.transform.position.x - queueEnd.transform.position.x) / (numberOfSlotsToGenerate - 1);
 
         List<PetitionerSlot> slots = new();
@@ -47,11 +50,15 @@ namespace Assets.Scripts.Runtime {
             for (int slotIndex = 0; slotIndex < numberOfSlotsToGenerate; slotIndex++) {
                 var slot = Instantiate(slotPrefab);
                 slot.spriteOrderIndex = slotIndex;
-                slot.transform.position = Vector3.Lerp(queueStart.transform.position, queueEnd.transform.position, slotIndex / (numberOfSlotsToGenerate - 1f));
+                if (slotIndex < numberOfSlotsToGenerate - 1) {
+                    slot.transform.position = Vector3.Lerp(queueStart.transform.position, queueEnd.transform.position, slotIndex / (numberOfSlotsToGenerate - 1f));
+                } else {
+                    slot.transform.position = queueEnd.transform.position + throneSlotOffset;
+                    slot.isThroneSlot = true;
+                }
                 slots.Add(slot);
             }
 
-            slots.Last().isThroneSlot = true;
 
             concernsLibrary.SetUp();
 

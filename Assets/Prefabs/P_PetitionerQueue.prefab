@@ -59,6 +59,7 @@ MonoBehaviour:
   queueEnd: {fileID: 6792851564806404133}
   petitionerPrefab: {fileID: 5663602012977832459, guid: 45f3937982b07da489c9bb85db0e2f54, type: 3}
   concernsLibrary: {fileID: -8117966405139107755, guid: a1bf0a2f8989ef24598c580aa8cd5cde, type: 3}
+  throneSlotOffset: {x: -8.78, y: 0.5, z: 0}
 --- !u!1 &1619934449255533571
 GameObject:
   m_ObjectHideFlags: 0
