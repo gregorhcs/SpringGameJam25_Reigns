@@ -1,6 +1,6 @@
 pipeline {
 	agent {
-		label 'unity && linux'
+		label 'unity'
 	}
 	options {
 		disableConcurrentBuilds()
