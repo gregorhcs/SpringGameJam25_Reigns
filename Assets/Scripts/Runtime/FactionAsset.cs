@@ -9,10 +9,10 @@ namespace Runtime {
         internal string id = default;
 
         [SerializeField, Range(0, 100)]
-        internal float startingLoyalty = 50;
+        float startingLoyalty = 50;
 
         [SerializeField, Range(0, 100)]
-        internal float currentLoyalty = 50;
+        float currentLoyalty = 50;
 
         [SerializeField, Expandable]
         ColorAsset colorAsset;
@@ -27,6 +27,18 @@ namespace Runtime {
 
         public void SetUp() {
             currentLoyalty = startingLoyalty;
+        }
+
+        public void AddToLoyalty(float summand) {
+            currentLoyalty = Mathf.Clamp(currentLoyalty + summand, 0f, 100f);
+        }
+
+        public void MultToLoyalty(float factor) {
+            currentLoyalty = Mathf.Clamp(currentLoyalty * factor, 0f, 100f);
+        }
+
+        public float GetLoyalty() {
+            return currentLoyalty;
         }
     }
 }

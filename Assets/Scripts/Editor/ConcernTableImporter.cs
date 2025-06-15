@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using Runtime;
 using Slothsoft.UnityExtensions.Editor;
@@ -97,7 +98,7 @@ namespace Editor {
         }
 
         bool TryParseLoyaltyModifier(string inputString, FactionAsset affectedFaction, int rowIndex, Dictionary<FactionAsset, float> modifierDictionary) {
-            if (float.TryParse(inputString, out float parsedModifier)) {
+            if (float.TryParse(inputString, NumberStyles.Any, CultureInfo.InvariantCulture, out float parsedModifier)) {
                 modifierDictionary.Add(affectedFaction, parsedModifier);
                 return true;
             } else {

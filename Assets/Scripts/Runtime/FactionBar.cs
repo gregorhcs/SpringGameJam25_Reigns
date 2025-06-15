@@ -35,7 +35,7 @@ namespace Runtime {
 
         void UpdateHeight(float deltaTime) {
             if (bar && asset) {
-                height = Mathf.SmoothDamp(height, asset.currentLoyalty, ref speed, smoothTime, float.PositiveInfinity, deltaTime);
+                height = Mathf.SmoothDamp(height, asset.GetLoyalty(), ref speed, smoothTime, float.PositiveInfinity, deltaTime);
                 bar.transform.SetPositionAndRotation(initialPosition + (Mathf.Lerp(minHeight, maxHeight, height / 100) * Vector3.up), Quaternion.identity);
             }
         }
