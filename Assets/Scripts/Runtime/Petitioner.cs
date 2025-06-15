@@ -1,6 +1,7 @@
 ﻿using System;
 using Runtime;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Assets.Scripts.Runtime {
     public class Petitioner : MonoBehaviour {
@@ -8,8 +9,12 @@ namespace Assets.Scripts.Runtime {
         public static event Action<Petitioner> onPetitionerLeaves;
 
         float royalSupport = 0f;
-        public float GetRoyalSupport() {  return royalSupport; }
-        public void AddToRoyalSupport(float amount) { royalSupport = Mathf.Clamp(royalSupport + amount, 0f, 100f); }
+        public float GetRoyalSupport() { return royalSupport; }
+        public void AddToRoyalSupport(float amount) {
+            royalSupport = Mathf.Clamp(royalSupport + amount, 0f, 100f);
+
+            UpdateStack();
+        }
 
         public ConcernAsset concern = default;
         public FactionAsset faction => concern.faction;
@@ -57,8 +62,11 @@ namespace Assets.Scripts.Runtime {
             if (BalancingLogs.enabled) {
                 Debug.Log($"Concern: {concern}");
             }
+
             concern.ExecuteOnConcern(royalSupport);
             onPetitionerLeaves.Invoke(this);
+
+            DestroyStack();
         }
 
         protected void Update() {
@@ -105,10 +113,47 @@ namespace Assets.Scripts.Runtime {
                 transform.position += delta;
 
                 if (overshoot > 0) {
-                    isPhysicallyAtSlot = true;
-                    animator.Play("Idle", layer: 0, normalizedTime: 0f);
+                    ArriveAtSlot();
                 }
             }
         }
+
+        void ArriveAtSlot() {
+            isPhysicallyAtSlot = true;
+            animator.Play("Idle", layer: 0, normalizedTime: 0f);
+
+            if (slot.isThroneSlot) {
+                SpawnStack();
+            }
+        }
+
+        void SpawnStack() {
+
+            if (!stack && stackPrefab && stackPivot) {
+                stack = Instantiate(stackPrefab, stackPivot.position, stackPivot.rotation);
+            }
+
+            UpdateStack();
+        }
+
+        void UpdateStack() {
+            if (stack) {
+                stack.totalCoins = Mathf.RoundToInt(GetRoyalSupport() / Jarl.SUPPORT_PER_COIN);
+            }
+        }
+
+        void DestroyStack() {
+            if (stack) {
+                Destroy(stack.gameObject);
+            }
+        }
+
+        [SerializeField]
+        CoinStack stackPrefab;
+
+        [SerializeField]
+        Transform stackPivot;
+
+        CoinStack stack;
     }
 }

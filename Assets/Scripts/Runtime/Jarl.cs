@@ -14,8 +14,7 @@ namespace Assets.Scripts.Runtime {
         [SerializeField]
         PetitionerQueue queue = default;
 
-        [SerializeField]
-        float royalSupportPerThrow = 0.1f;
+        internal const float SUPPORT_PER_COIN = 5;
 
         //[SerializeField]
         //float maxSendAwayTime = 15f;
@@ -46,7 +45,7 @@ namespace Assets.Scripts.Runtime {
             if (coinCannon) {
                 coinCannon.Shoot(() => {
                     if (queue.TryGetPetitionerInFrontOfThrone(out var petitioner)) {
-                        petitioner.AddToRoyalSupport(royalSupportPerThrow);
+                        petitioner.AddToRoyalSupport(SUPPORT_PER_COIN);
                     }
                 });
             }

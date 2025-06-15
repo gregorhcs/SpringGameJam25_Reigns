@@ -239,6 +239,37 @@ MonoBehaviour:
   colorLerpTarget: {fileID: 1900340900682141955}
   speechText: {fileID: 3634394112463961915}
   rootPanel: {fileID: 260674606618843225}
+--- !u!1 &5540698780281213253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5617145697083311996}
+  m_Layer: 0
+  m_Name: StackPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5617145697083311996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5540698780281213253}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4571894423896339950}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6032148296727866851
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +441,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7369217668254263178}
+  - {fileID: 5617145697083311996}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5663602012977832459
@@ -430,6 +462,8 @@ MonoBehaviour:
   animator: {fileID: -5144078725056251342}
   speed: 1.7
   leaveDirection: {x: -1.7, y: -1}
+  stackPrefab: {fileID: 8184935944889215402, guid: 38c31d063bcb3384db49243723bb32fc, type: 3}
+  stackPivot: {fileID: 5617145697083311996}
 --- !u!212 &-4256775892510171508
 SpriteRenderer:
   m_ObjectHideFlags: 0
