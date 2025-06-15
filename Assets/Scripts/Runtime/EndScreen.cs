@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Runtime
 {
     public sealed class EndScreen : MonoBehaviour
     {
         [SerializeField]
-        HighscoresAsset asset = default;
+        HighscoresAsset highscores = default;
 
         [SerializeField]
         TMPro.TMP_Text age = default;
@@ -19,13 +20,15 @@ namespace Runtime
         public void Open()
         {
             gameObject.SetActive(true);
-            age.text = $"You lived {asset.currentRun.year} years and {asset.currentRun.month} months.";
-            handledConcerns.text = $"You handled {asset.currentRun.handledConcerns} concerns.";
-            timePlayed.text = $"Playtime - {asset.currentRun.playtime.Hours}h {asset.currentRun.playtime.Minutes}m {asset.currentRun.playtime.Seconds}s";
+            age.text = $"You reigned for {highscores.currentRun.year} year(s) and {highscores.currentRun.month} month(s).";
+            handledConcerns.text = $"You handled {highscores.currentRun.handledConcerns} concern(s).";
+            timePlayed.text = $"Playtime - {highscores.currentRun.playtime.Hours}h {highscores.currentRun.playtime.Minutes}m {highscores.currentRun.playtime.Seconds}s";
+            PlayerAsset.onShortInteract += HandleInteract;
         }
 
-        public void Close() {
-            gameObject.SetActive(false);
+        void HandleInteract() {
+            PlayerAsset.onShortInteract -= HandleInteract;
+            SceneManager.LoadScene("SampleScene");
         }
     }
 }

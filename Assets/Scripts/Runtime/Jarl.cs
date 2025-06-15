@@ -33,11 +33,25 @@ namespace Assets.Scripts.Runtime {
             PlayerAsset.onLongInteract += InputSendAway;
             PlayerAsset.onLongInteractCanceled += InputSendAwayCanceled;
 
+            GameState.onHasEndedChanged += OnHasEndedChanged;
+
             UpdateState(JarlState.Idle);
         }
 
         [SerializeField]
         CoinCannon coinCannon;
+
+        void OnHasEndedChanged(bool newIsEnded) {
+            if (!newIsEnded) {
+                return;
+            }
+            PlayerAsset.onShortInteract -= InputThrow;
+            PlayerAsset.onLongInteractProgress -= InputSendAwayProgress;
+            PlayerAsset.onLongInteract -= InputSendAway;
+            PlayerAsset.onLongInteractCanceled -= InputSendAwayCanceled;
+
+            GameState.onHasEndedChanged -= OnHasEndedChanged;
+        }
 
         void InputThrow() {
             UpdateState(JarlState.Throw);

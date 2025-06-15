@@ -1,3 +1,4 @@
+using Assets.Scripts.Runtime;
 using UnityEngine;
 
 namespace Runtime {
@@ -9,7 +10,7 @@ namespace Runtime {
         TMPro.TMP_Text age = default;
 
         void Update() {
-            age.text = EndingConditionsObserver.isEnded ? "" : $"{asset.currentRun.year}y {asset.currentRun.month}m.";
+            age.text = GameState.hasEnded ? "" : $"{asset.currentRun.year}y {asset.currentRun.month}m.";
         }
     }
 }

@@ -1,5 +1,7 @@
 using System;
+using UnityEngine.SceneManagement;
 using UnityEngine;
+using Assets.Scripts.Runtime;
 
 namespace Runtime {
     [CreateAssetMenu]
@@ -31,10 +33,6 @@ namespace Runtime {
         internal float interactionDuration => Time.time - interactionTime;
 
         internal void OnInteract(bool willBeInteracting) {
-            if (EndingConditionsObserver.isEnded) {
-                return;
-            }
-
             bool wasInteracting = isInteracting;
             isInteracting = willBeInteracting;
 

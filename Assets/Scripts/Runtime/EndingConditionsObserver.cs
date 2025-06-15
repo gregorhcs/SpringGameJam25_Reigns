@@ -11,8 +11,6 @@ namespace Runtime {
         [SerializeField]
         EndScreen endScreen = default;
 
-        public static bool isEnded = false;
-
         public void Start()
         {
             Petitioner.onPetitionerLeaves += HandlePetitionerLeaves;
@@ -21,6 +19,8 @@ namespace Runtime {
             highscoresAsset.currentRun = new HighscoreEntry {
                 startTime = DateTime.Now
             };
+
+            GameState.ChangeHasEnded(false);
         }
 
         void HandlePetitionerLeaves(Petitioner leavingPetitioner) {
@@ -30,7 +30,7 @@ namespace Runtime {
                 highscoresAsset.currentRun.endTime = DateTime.Now;
                 highscoresAsset.currentRun.died = true;
                 highscoresAsset.highscores.Add(highscoresAsset.currentRun);
-                isEnded = true;
+                GameState.ChangeHasEnded(true);
                 endScreen.Open();
                 Debug.Log("Died of old age!");
             }
@@ -40,7 +40,7 @@ namespace Runtime {
             highscoresAsset.currentRun.endTime = DateTime.Now;
             highscoresAsset.currentRun.died = false;
             highscoresAsset.highscores.Add(highscoresAsset.currentRun);
-            isEnded = true;
+            GameState.ChangeHasEnded(true);
             endScreen.Open();
             Debug.Log("Cast down by rebels!");
         }
