@@ -9,7 +9,7 @@ namespace Runtime {
         TMPro.TMP_Text age = default;
 
         void Update() {
-            age.text = $"{asset.currentRun.year}y {asset.currentRun.month}m.";
+            age.text = EndingConditionsObserver.isEnded ? "" : $"{asset.currentRun.year}y {asset.currentRun.month}m.";
         }
     }
 }

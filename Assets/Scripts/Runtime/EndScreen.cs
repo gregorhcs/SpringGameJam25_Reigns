@@ -8,9 +8,6 @@ namespace Runtime
         HighscoresAsset asset = default;
 
         [SerializeField]
-        Canvas root = default;
-
-        [SerializeField]
         TMPro.TMP_Text age = default;
 
         [SerializeField]
@@ -19,17 +16,16 @@ namespace Runtime
         [SerializeField]
         TMPro.TMP_Text timePlayed = default;
 
-        void OnEnable()
+        public void Open()
         {
-            root.enabled = true;
+            gameObject.SetActive(true);
             age.text = $"You lived {asset.currentRun.year} years and {asset.currentRun.month} months.";
             handledConcerns.text = $"You handled {asset.currentRun.handledConcerns} concerns.";
-            timePlayed.text = $"Playtime - {asset.currentRun.playtime}";
+            timePlayed.text = $"Playtime - {asset.currentRun.playtime.Hours}h {asset.currentRun.playtime.Minutes}m {asset.currentRun.playtime.Seconds}s";
         }
 
-        void OnDisable()
-        {
-            root.enabled = false;
+        public void Close() {
+            gameObject.SetActive(false);
         }
     }
 }

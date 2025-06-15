@@ -30,6 +30,10 @@ namespace Runtime {
         internal float interactionDuration => Time.time - interactionTime;
 
         internal void OnInteract(bool willBeInteracting) {
+            if (EndingConditionsObserver.isEnded) {
+                return;
+            }
+
             bool wasInteracting = isInteracting;
             isInteracting = willBeInteracting;
 
