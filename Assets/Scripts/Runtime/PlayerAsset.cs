@@ -8,6 +8,7 @@ namespace Runtime {
         internal static event Action onShortInteract;
         internal static event Action<float> onLongInteractProgress;
         internal static event Action onLongInteract;
+        internal static event Action onLongInteractCanceled;
 
         internal void SetUp() {
             isInteracting = false;
@@ -59,6 +60,8 @@ namespace Runtime {
                 if (wasInteracting) {
                     if (interactionDuration < shortInteractionDuration) {
                         onShortInteract?.Invoke();
+                    } else {
+                        onLongInteractCanceled?.Invoke();
                     }
                 }
             }

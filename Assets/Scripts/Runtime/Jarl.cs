@@ -31,8 +31,9 @@ namespace Assets.Scripts.Runtime {
         protected void Start()
         {
             PlayerAsset.onShortInteract += InputThrow;
-            PlayerAsset.onLongInteractProgress += InputLongProgress;
+            PlayerAsset.onLongInteractProgress += InputSendAwayProgress;
             PlayerAsset.onLongInteract += InputSendAway;
+            PlayerAsset.onLongInteractCanceled += InputSendAwayCanceled;
 
             UpdateState(JarlState.Idle);
         }
@@ -57,7 +58,7 @@ namespace Assets.Scripts.Runtime {
             }
         }
 
-        void InputLongProgress(float timeSinceStart) {
+        void InputSendAwayProgress(float timeSinceStart) {
             //if (timeSinceStart > quitTime) {
             //    QuitGameHelper.Quit();
             //}
@@ -77,6 +78,10 @@ namespace Assets.Scripts.Runtime {
                     petitioner.Leave();
                 }
             }
+        }
+
+        void InputSendAwayCanceled() {
+            UpdateState(JarlState.Idle);
         }
 
         void UpdateState(JarlState newState) {
