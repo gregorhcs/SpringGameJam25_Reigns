@@ -32,9 +32,9 @@ pipeline {
 							FORMATTING_EXCLUDE : 'Library Assets/Plugins Packages',
 
 							// which executables to create
-							BUILD_FOR_WINDOWS : '0',
-							BUILD_FOR_LINUX : '0',
-							BUILD_FOR_MAC : '0',
+							BUILD_FOR_WINDOWS : '1',
+							BUILD_FOR_LINUX : '1',
+							BUILD_FOR_MAC : '1',
 							BUILD_FOR_WEBGL : '1',
 							BUILD_FOR_ANDROID : '0',
 
