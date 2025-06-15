@@ -1,7 +1,5 @@
 using System;
-using UnityEngine.SceneManagement;
 using UnityEngine;
-using Assets.Scripts.Runtime;
 
 namespace Runtime {
     [CreateAssetMenu]
