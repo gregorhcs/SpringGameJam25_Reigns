@@ -1,7 +1,6 @@
 ﻿using System;
 using Runtime;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Assets.Scripts.Runtime {
     public class Petitioner : MonoBehaviour {
