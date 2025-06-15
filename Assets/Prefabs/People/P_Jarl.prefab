@@ -178,7 +178,6 @@ MonoBehaviour:
   state: 0
   animator: {fileID: 9103876671980474281}
   queue: {fileID: 0}
-  royalSupportPerThrow: 5
   throwAnimActiveTime: 0.15
   coinCannon: {fileID: 6275229063269980309}
 --- !u!1001 &4016929217962948152
@@ -229,9 +228,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7402631294059440340, guid: 38c31d063bcb3384db49243723bb32fc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4979376876150585179, guid: 6a56591cdc3645348b4beb3fc08f258b, type: 3}
     - target: {fileID: 7667517141990558603, guid: 38c31d063bcb3384db49243723bb32fc, type: 3}
       propertyPath: m_Name
       value: P_CoinStack
+      objectReference: {fileID: 0}
+    - target: {fileID: 8184935944889215402, guid: 38c31d063bcb3384db49243723bb32fc, type: 3}
+      propertyPath: totalCoins
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
