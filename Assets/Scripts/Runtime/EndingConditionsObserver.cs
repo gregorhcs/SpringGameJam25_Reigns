@@ -15,6 +15,7 @@ namespace Runtime {
         {
             Petitioner.onPetitionerLeaves += HandlePetitionerLeaves;
             FactionAsset.onFactionLoyaltyReachesZero += HandleFactionLoyaltyReachesZero;
+            HighscoresAsset.onConcernHandled += HandleConcernHandled;
 
             highscoresAsset.currentRun = new HighscoreEntry {
                 startTime = DateTime.Now
@@ -23,14 +24,7 @@ namespace Runtime {
             GameState.ChangeHasEnded(false);
         }
 
-        void Unsubscribe() {
-            Petitioner.onPetitionerLeaves -= HandlePetitionerLeaves;
-            FactionAsset.onFactionLoyaltyReachesZero -= HandleFactionLoyaltyReachesZero;
-        }
-
-        void HandlePetitionerLeaves(Petitioner leavingPetitioner) {
-            highscoresAsset.currentRun.handledConcerns++;
-
+        void HandleConcernHandled() {
             if (highscoresAsset.currentRun.year == 40) {
                 highscoresAsset.currentRun.endTime = DateTime.Now;
                 highscoresAsset.currentRun.died = true;
@@ -40,6 +34,17 @@ namespace Runtime {
                 endScreen.Open();
                 Debug.Log("Died of old age!");
             }
+        }
+
+        void Unsubscribe() {
+            Petitioner.onPetitionerLeaves -= HandlePetitionerLeaves;
+            FactionAsset.onFactionLoyaltyReachesZero -= HandleFactionLoyaltyReachesZero;
+            HighscoresAsset.onConcernHandled -= HandleConcernHandled;
+        }
+
+        void HandlePetitionerLeaves(Petitioner leavingPetitioner) {
+            highscoresAsset.currentRun.handledConcerns++;
+            HandleConcernHandled();
         }
 
         void HandleFactionLoyaltyReachesZero(FactionAsset faction) {
