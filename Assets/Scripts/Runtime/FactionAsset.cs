@@ -1,3 +1,4 @@
+using System;
 using Slothsoft.Aseprite;
 using Slothsoft.UnityExtensions;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 namespace Runtime {
     [CreateAssetMenu]
     public sealed class FactionAsset : ScriptableObject {
+        public static Action<FactionAsset> onFactionLoyaltyReachesZero = default;
+
         [SerializeField]
         internal string id = default;
 
@@ -29,12 +32,12 @@ namespace Runtime {
             currentLoyalty = startingLoyalty;
         }
 
-        public void AddToLoyalty(float summand) {
+        public void ModifyLoyalty(float summand, float factor) {
             currentLoyalty = Mathf.Clamp(currentLoyalty + summand, 0f, 100f);
-        }
-
-        public void MultToLoyalty(float factor) {
             currentLoyalty = Mathf.Clamp(currentLoyalty * factor, 0f, 100f);
+            if (Mathf.Approximately(currentLoyalty, 0f)) {
+                onFactionLoyaltyReachesZero.Invoke(this);
+            }
         }
 
         public float GetLoyalty() {

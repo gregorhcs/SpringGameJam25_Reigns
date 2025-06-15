@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Assets.Scripts.Runtime {
     public class Petitioner : MonoBehaviour {
 
-        public static event Action onPetitionerLeaves;
+        public static event Action<Petitioner> onPetitionerLeaves;
 
         float royalSupport = 0f;
         public float GetRoyalSupport() {  return royalSupport; }
@@ -58,7 +58,7 @@ namespace Assets.Scripts.Runtime {
                 Debug.Log($"Concern: {concern}");
             }
             concern.ExecuteOnConcern(royalSupport);
-            onPetitionerLeaves.Invoke();
+            onPetitionerLeaves.Invoke(this);
         }
 
         protected void Update() {
