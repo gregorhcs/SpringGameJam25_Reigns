@@ -7,8 +7,18 @@ namespace Runtime {
         FactionAsset asset;
         [SerializeField]
         SpriteRenderer bar;
+        [SerializeField]
+        EmojiCannon emoji;
 
         Vector3 initialPosition = default;
+
+        void OnEnable() {
+            asset.onChangeLoyalty += emoji.Shoot;
+        }
+
+        void OnDisable() {
+            asset.onChangeLoyalty -= emoji.Shoot;
+        }
 
         void Start() {
             bar.sprite = asset.banner;

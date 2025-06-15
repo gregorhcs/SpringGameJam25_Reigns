@@ -5,21 +5,11 @@ using UnityEngine;
 namespace Runtime {
     sealed class EmojiCannon : MonoBehaviour {
         [SerializeField]
-        FactionAsset faction;
-        [SerializeField]
         float minDeltaToShoot = 1;
         [SerializeField]
         SerializableKeyValuePairs<ParticleSystem, float> cannons = new();
 
-        void OnEnable() {
-            faction.onChangeLoyalty += HandleChange;
-        }
-
-        void OnDisable() {
-            faction.onChangeLoyalty -= HandleChange;
-        }
-
-        void HandleChange(float change) {
+        internal void Shoot(float change) {
             change *= Random.value;
             if (Mathf.Abs(change) < minDeltaToShoot) {
                 return;

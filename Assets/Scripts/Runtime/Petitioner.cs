@@ -53,7 +53,18 @@ namespace Assets.Scripts.Runtime {
             animator.Play("Idle", layer: 0, normalizedTime: 0f);
 
             isSetUp = true;
+
+            inConcern.faction.onChangeLoyalty += emoji.Shoot;
         }
+
+        protected void OnDisable() {
+            if (concern) {
+                concern.faction.onChangeLoyalty -= emoji.Shoot;
+            }
+        }
+
+        [SerializeField]
+        EmojiCannon emoji;
 
         public void Leave() {
             isLeaving = true;

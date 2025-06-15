@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: e2b1667cfbc1785439bd36fdc2d9f963, type: 2}
   bar: {fileID: 5691571346067835558}
+  emoji: {fileID: 8676452657379058291}
   smoothTime: 0.5
   minHeight: 4
   maxHeight: 0
@@ -266,3 +267,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5460508409905110168, guid: 3478520b80a85f849af22afbe10ff390, type: 3}
   m_PrefabInstance: {fileID: 5542719935623990367}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8676452657379058291 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3783940486109769260, guid: 3478520b80a85f849af22afbe10ff390, type: 3}
+  m_PrefabInstance: {fileID: 5542719935623990367}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02b02ad532390c4ba6ade646df67e05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
