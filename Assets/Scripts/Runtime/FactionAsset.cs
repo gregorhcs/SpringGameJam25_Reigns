@@ -6,7 +6,8 @@ using UnityEngine;
 namespace Runtime {
     [CreateAssetMenu]
     public sealed class FactionAsset : ScriptableObject {
-        public static Action<FactionAsset> onFactionLoyaltyReachesZero = default;
+        public static Action<FactionAsset> onFactionLoyaltyReachesZero;
+        public Action<float> onChangeLoyalty;
 
         [SerializeField]
         internal string id = default;
@@ -33,8 +34,15 @@ namespace Runtime {
         }
 
         public void ModifyLoyalty(float summand, float factor) {
+            float previous = currentLoyalty;
+
             currentLoyalty = Mathf.Clamp(currentLoyalty + summand, 0f, 100f);
             currentLoyalty = Mathf.Clamp(currentLoyalty * factor, 0f, 100f);
+
+            if (!Mathf.Approximately(currentLoyalty, previous)) {
+                onChangeLoyalty?.Invoke(currentLoyalty - previous);
+            }
+
             if (Mathf.Approximately(currentLoyalty, 0f)) {
                 onFactionLoyaltyReachesZero?.Invoke(this);
             }

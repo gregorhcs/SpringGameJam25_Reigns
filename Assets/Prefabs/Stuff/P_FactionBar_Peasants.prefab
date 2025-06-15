@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: asset
       value: 
       objectReference: {fileID: 11400000, guid: 7880d98152434394995600b1a4eadb16, type: 2}
+    - target: {fileID: 8676452657379058291, guid: ba384209229ec2c44ada8134532c4599, type: 3}
+      propertyPath: faction
+      value: 
+      objectReference: {fileID: 11400000, guid: 7880d98152434394995600b1a4eadb16, type: 2}
     - target: {fileID: 9121640114504902981, guid: ba384209229ec2c44ada8134532c4599, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
