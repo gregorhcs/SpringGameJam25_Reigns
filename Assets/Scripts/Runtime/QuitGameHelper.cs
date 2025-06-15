@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Assets.Scripts.Runtime {
     sealed class QuitGameHelper : MonoBehaviour {
 #if UNITY_WEBPLAYER
-    public static string webplayerQuitURL = "https://gregorsoenn.itch.io/kingdom";
+    public static string webplayerQuitURL = "https://gregorsoenn.itch.io/press-for-peace";
 #endif
         public static void Quit() {
 #if UNITY_EDITOR
