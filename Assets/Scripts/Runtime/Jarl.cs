@@ -3,7 +3,7 @@ using Runtime;
 using UnityEngine;
 
 namespace Assets.Scripts.Runtime {
-    public class Jarl : MonoBehaviour {
+    sealed class Jarl : MonoBehaviour {
         public enum JarlState { Idle, Throw, Reject, Leave };
 
         public JarlState state = JarlState.Idle;
@@ -28,8 +28,7 @@ namespace Assets.Scripts.Runtime {
 
         Coroutine endThrowCoroutine = default;
 
-        protected void Start()
-        {
+        void Start() {
             PlayerAsset.onShortInteract += InputThrow;
             PlayerAsset.onLongInteractProgress += InputSendAwayProgress;
             PlayerAsset.onLongInteract += InputSendAway;
@@ -38,22 +37,30 @@ namespace Assets.Scripts.Runtime {
             UpdateState(JarlState.Idle);
         }
 
+        [SerializeField]
+        CoinCannon coinCannon;
+
         void InputThrow() {
-            if (queue.TryGetPetitionerInFrontOfThrone(out var petitioner)) {
-                UpdateState(JarlState.Throw);
+            UpdateState(JarlState.Throw);
 
-                petitioner.AddToRoyalSupport(royalSupportPerThrow);
-
-                if (endThrowCoroutine != null) {
-                    StopCoroutine(endThrowCoroutine);
-                }
-                endThrowCoroutine = StartCoroutine(EndThrowAnimation());
+            if (coinCannon) {
+                coinCannon.Shoot(() => {
+                    if (queue.TryGetPetitionerInFrontOfThrone(out var petitioner)) {
+                        petitioner.AddToRoyalSupport(royalSupportPerThrow);
+                    }
+                });
             }
+
+            if (endThrowCoroutine != null) {
+                StopCoroutine(endThrowCoroutine);
+            }
+
+            endThrowCoroutine = StartCoroutine(EndThrowAnimation());
         }
 
         IEnumerator EndThrowAnimation() {
             yield return new WaitForSeconds(throwAnimActiveTime);
-            if (state  == JarlState.Throw) {
+            if (state == JarlState.Throw) {
                 UpdateState(JarlState.Idle);
             }
         }
@@ -88,6 +95,7 @@ namespace Assets.Scripts.Runtime {
             if (state == newState) {
                 return;
             }
+
             state = newState;
             animator.Play(state.ToString(), layer: 0, normalizedTime: 0f);
         }
