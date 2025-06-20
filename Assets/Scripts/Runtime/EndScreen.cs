@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace Runtime {
     public sealed class EndScreen : MonoBehaviour {
@@ -40,7 +39,7 @@ namespace Runtime {
                 }
                 factionSpriteRenderer.sprite = winnerFaction.sprite;
                 factionSpriteRenderer.enabled = true;
-                jarlSpriteRenderer.enabled = false;
+                jarlSpriteRenderer.sortingLayerName = "Background";
             }
 
             PlayerAsset.onShortInteract += HandleInteract;
