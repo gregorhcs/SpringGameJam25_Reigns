@@ -67,6 +67,10 @@ namespace Assets.Scripts.Runtime {
             Petitioner.onPetitionerLeaves += HandlePetitionerLeaves;
         }
 
+        protected void OnDestroy() {
+            Petitioner.onPetitionerLeaves -= HandlePetitionerLeaves;
+        }
+
         public bool TryGetPetitionerInFrontOfThrone(out Petitioner outPetitioner) {
             outPetitioner = null;
             foreach (var slot in slots) {
