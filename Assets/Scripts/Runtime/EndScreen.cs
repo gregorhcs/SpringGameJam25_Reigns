@@ -17,13 +17,10 @@ namespace Runtime {
         TMPro.TMP_Text timePlayed = default;
 
         [SerializeField]
-        Image factionImage = default;
+        SpriteRenderer factionSpriteRenderer = default;
 
         [SerializeField]
-        GameObject winnerFactionObject = default;
-
-        [SerializeField]
-        GameObject winnerJarlObject = default;
+        SpriteRenderer jarlSpriteRenderer = default;
 
         [SerializeField]
         FactionAsset[] factions = default;
@@ -34,17 +31,16 @@ namespace Runtime {
             handledConcerns.text = $"You handled {highscores.currentRun.handledConcerns} concern(s).";
             timePlayed.text = $"Playtime - {highscores.currentRun.playtime.Hours}h {highscores.currentRun.playtime.Minutes}m {highscores.currentRun.playtime.Seconds}s";
 
-            if (highscores.currentRun.died) {
-                winnerJarlObject.SetActive(true);
-            } else {
+            if (!highscores.currentRun.died) {
                 FactionAsset winnerFaction = null;
                 foreach (var faction in factions) {
                     if (winnerFaction == null || winnerFaction.GetLoyalty() > faction.GetLoyalty()) {
                         winnerFaction = faction;
                     }
                 }
-                factionImage.sprite = winnerFaction.sprite;
-                winnerFactionObject.SetActive(true);
+                factionSpriteRenderer.sprite = winnerFaction.sprite;
+                factionSpriteRenderer.enabled = true;
+                jarlSpriteRenderer.enabled = false;
             }
 
             PlayerAsset.onShortInteract += HandleInteract;
