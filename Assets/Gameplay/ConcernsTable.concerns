@@ -1,9 +1,9 @@
 Faction	Speech	NobleSum	NobleMult	PeasantSum	PeasantMult	ClericSum	ClericMult	MerchantSum	MerchantMult
-		15	0.5	15	0.5	15	0.5	15	0.5
+		0	0.5	0	0.5	0	0.5	0	0.5
 Nobles	Bestow knighthood upon my squire and throw a feast.	5	1	-5	1	0	1	0	1
 Nobles	We need money to pay propaganda for the war.	10	1	0	1	0	1	0	1
 Nobles	Allow us to take more money from the peasants!	15	1	-15	1	0	1	0	1
-Nobles	Buy war ships for war against Enyland!	20	1	-5	1	-5	1	10	1
+Nobles	Buy war ships for war against Enyland!	15	1	-5	1	-5	1	10	1
 Nobles	Force peasants into mass recruitment!	0	1.5	0	0.5	-15	1	0	1
 Peasants	Gift our village some barrels with beer for the Feast of Holy Laria.	0	1	5	1	15	1	0	1
 Peasants	Allow farmers to sell wheat on their own.	0	1	10	1	5	1	-10	1
@@ -12,11 +12,11 @@ Peasants	Allow enclaves where farmer and priests cooperate without rule!	-20	1	2
 Peasants	Free us from servitude to the nobles!	0	0.5	0	1.5	10	1	0	1
 Clerics	Pay this young theologists studies.	0	1	0	1	5	1	0	1
 Clerics	Allow wandering priests to rest for free in inns.	0	1	0	1	10	1	-15	1
-Clerics	Transfer holy relic from lord falk to cloister!	-10	1	0	1	15	1	0	1
-Clerics	Build a cathedral on Forcastle Market!	0	1	15	1	20	1	-25	1
+Clerics	Transfer holy relic from Lord Falk to cloister!	-10	1	0	1	15	1	0	1
+Clerics	Build a cathedral on Forcastle Market!	0	1	10	1	20	1	-25	1
 Clerics	Pay military advisor to make room for clerical king advisor!	0	0.5	5	1	0	1.5	-10	1
 Merchants	Wed magnate daughter to niece.	0	1	0	1	0	1	5	1
-Merchants	Allowing paying money to get noble status.	-10	1	10	1	0	1	10	1
+Merchants	Allow paying money to get noble status.	-10	1	10	1	0	1	10	1
 Merchants	Force wheat to be sold by merchants only!	-5	1	-20	1	-10	1	15	1
 Merchants	Force priests to accept merchant trade offers!	0	1	0	1	-30	1	20	1
 Merchants	Allow working for the higher class without payment!	20	1	-30	1	0	1	5	1.5
@@ -24,19 +24,19 @@ Nobles	Allow our most trusted lord to replace you for a bit. Why do you not rest
 Peasants	Please my King, free us from the heavy burden of the taxes. Families all over the country suffer from them.	-20	1	0	1.3	0	1	-20	1
 Clerics	It is long overdue for the church to be the final instance of morality. Grant us that right, and we will not disappoint you.	-10	1	0	1	0	1.3	0	1
 Merchants	Dearest King, our families have known each other for the longest time. Why don't we marry, bringing us closer than ever?	-20	1	0	1	0	1	20	1.3
-Nobles	Execute these murderers we tracked down in the countryside!	15	1.2	-20	0.8	25	1	0	1
-Peasants	Tear down this old shrine, make place for new fields!	0	1	25	1	-20	1	0	1
+Nobles	Execute these murderers we tracked down in the countryside!	10	1.2	-20	0.8	25	1	0	1
+Peasants	Tear down this old shrine, make place for new fields!	0	1	10	1	-20	1	0	1
 Merchants	Allow the upper class to claim dogs from their servants without payment.	15	1	-10	0.8	0	1	15	1
 Nobles	Restrict access to castle food stocks in dire times.	0	1.5	0	0.8	-10	1	0	0.8
-Misc	Establish the merchant guild as administrators of clerical treasures.	0	1	0	1	0	0.3	25	1.4
+Misc	Establish the merchant guild as administrators of clerical treasures.	0	1	0	1	0	0.3	20	1.4
 Misc	Suppress the rebellious folks in the coastal trade towns!	20	1.5	-10	1	0	1	-20	1
-Misc	Force the builders guid to build a church in our village!	0	1	10	1	10	1	-20	1
+Misc	Force the builder's guild to build a church in our village!	0	1	10	1	10	1	-20	1
 Misc	Send warrior priests against the heretic natives!	5	1	-10	1	15	1	0	1
-Misc	Allow hunting in cloister forests!	10	1	5	1	-15	1	5	1
-Merchants	Pay the builder guilds to fortify all castles for the war!	10	1	0	1	0	1	20	1.1
-Peasants	Allow everyone to marry into noble bloodlines!	-30	1	0	1	15	1	0	1.3
-Clerics	Declare the concept of possession void! Redistribute gods gifts to the Good and Poor!	0	0.1	0	1.8	0	1.4	0	0.1
-Nobles	Declare war on Enyland!	20	1.4	10	1	-5	1	-10	1
+Misc	Allow hunting in cloister forests!	10	1	5	1	-15	1	0	1
+Merchants	Pay the builder guilds to fortify all castles for the war!	10	1	0	1	0	1	10	1.1
+Peasants	Allow everyone to marry into noble bloodlines!	-30	1	5	1	0	1	10	1.3
+Clerics	Declare the concept of possession void! Redistribute god's gifts to the Good and Poor!	0	0.1	0	1.8	0	1.4	0	0.1
+Nobles	Declare war on Enyland!	15	1.4	10	1	-5	1	-10	1
 Misc	Organize a big tournament!	10	1	10	1	-10	1	5	1
-Misc	Release our husbands from the prisons!	-15	1	15	1	-15	1	15	1
+Misc	Release our husbands from the prisons!	-15	1	15	1	-15	1	10	1
 Misc	The King should not waste so much money!	-5	1	-5	1	-10	1	-15	1

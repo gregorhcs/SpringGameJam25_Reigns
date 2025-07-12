@@ -12,4 +12,8 @@ Spring Game Jam 2025:
 - Gregor Sönnichsen (game design, programming, sound design)
 
 ### Third-party assets
-- [Slothsoft's Unity Extensions](https://github.com/Faulo/UnityExtensions)
+- ["Slothsoft's Unity Extensions"](https://github.com/Faulo/UnityExtensions)
+- ["Alkhemikal" - fontenddev.com](https://fontenddev.com/fonts/alkhemikal/)
+- ["Coin Splash" - keatonmarek](https://freesound.org/people/keatonmarek/sounds/533768/)
+- ["Medieval Dance - Saltarello" - gertraut_hecher](https://freesound.org/people/gertraut_hecher/sounds/787351/)
+- ["Trumpet Brass Fanfare" - ohforheavensake](https://freesound.org/people/ohforheavensake/sounds/423455/)
